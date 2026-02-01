@@ -19,6 +19,12 @@ header {
     color: red;
 }
 
+nav {
+    background-color: #111;
+    padding: 10px;
+    text-align: center;
+}
+
 nav a {
     color: #fff;
     margin: 0 10px;
@@ -33,36 +39,70 @@ main {
     padding: 20px;
 }
 
-.rank-section {
-    margin-top: 20px;
+.rank-menu {
+    margin-bottom: 20px;
 }
 
-button {
-    padding: 5px 10px;
-    margin: 5px;
+.rank-menu button {
+    padding: 8px 15px;
+    margin-right: 10px;
     background-color: red;
-    color: #fff;
     border: none;
+    color: #fff;
     cursor: pointer;
+    border-radius: 5px;
 }
 
-button:hover {
+.rank-menu button:hover {
     background-color: darkred;
 }
 
-ul li a {
-    color: red;
-    text-decoration: none;
-    margin-left: 10px;
+/* Product cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
 
-ul li a:hover {
-    text-decoration: underline;
+.card {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-#playerhead {
-    width: 30px;
-    height: 30px;
+.card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px red;
+}
+
+.buy-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    margin-top: 10px;
+    background-color: red;
+    color: #fff;
     border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.buy-btn:hover {
+    background-color: darkred;
+}
+
+/* Player info */
+#playerhead {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid red;
     margin-right: 5px;
 }
