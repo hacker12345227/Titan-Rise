@@ -1,251 +1,39 @@
-/* ======================= */
-/* RESET & BASE STYLING    */
-/* ======================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Landscape card style */
+.card.landscape {
+    background:#222;
+    border-radius:10px;
+    text-align:center;
+    transition:0.3s;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background: #111;
-    color: #fff;
-    line-height: 1.6;
+.card.landscape img {
+    width:100%;
+    height:120px; /* Hoogte van de afbeelding */
+    object-fit:cover;
+    border-top-left-radius:15px;  /* Afgeronde bovenhoeken */
+    border-top-right-radius:15px;
+    margin-bottom:10px;
 }
 
-/* ======================= */
-/* HEADER                  */
-/* ======================= */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background: #000;
-}
+/* Verwijder de vaste hoogte van standaard kaarten */
+.card h3 { margin:5px 0; }
+.card p { margin:0; }
 
-header .logo img {
-    width: 150px;
-}
-
-#user-login input {
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: none;
-}
-
-#user-login button {
-    padding: 5px 10px;
-    background: red;
-    border: none;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-#user-login button:hover {
-    background: darkred;
-}
-
-#user-info {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-#playerhead {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid red;
-}
-
-/* ======================= */
-/* NAVIGATION              */
-/* ======================= */
-nav {
-    display: flex;
-    justify-content: center;
-    background: #111;
-    padding: 10px 0;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    transition: 0.2s;
-}
-
-nav a:hover {
-    color: red;
-}
-
-/* ======================= */
-/* LANDING PAGE            */
-/* ======================= */
-.landing {
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.landing h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-.landing .highlight {
-    color: red;
-}
-
-.landing p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-.cta-btn {
-    padding: 10px 20px;
-    background: red;
-    border-radius: 10px;
-    color: #fff;
-    text-decoration: none;
-    display: inline-block;
-    transition: 0.3s;
-}
-
-.cta-btn:hover {
-    background: darkred;
-    transform: scale(1.05);
-}
-
-/* ======================= */
-/* RANK/KEY/COIN CARDS     */
-/* ======================= */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.card {
-    background: #222;
-    border-radius: 10px;
-    text-align: center;
-    transition: 0.3s;
-    display: flex;
-    flex-direction: column;
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.card h3 {
-    margin-top: 10px;
-    font-size: 1.2em;
-}
-
-.card p {
-    margin: 5px 0;
-    font-size: 1em;
-}
-
+/* Koop knop blijft hetzelfde */
 .buy-btn {
-    margin-top: auto;
-    padding: 8px 15px;
-    background: red;
-    border-radius: 5px;
-    color: #fff;
-    text-decoration: none;
-    transition: 0.3s;
+    display:inline-block;
+    padding:8px 20px;
+    background:red;
+    border-radius:5px;
+    text-decoration:none;
+    color:#fff;
+    margin-top:10px;
+    transition:0.3s;
 }
-
 .buy-btn:hover {
-    background: darkred;
-    transform: scale(1.05);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px red;
-}
-
-/* ======================= */
-/* RANK MENU BUTTONS       */
-/* ======================= */
-.rank-menu {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.rank-menu button {
-    padding: 8px 15px;
-    margin: 0 5px;
-    background: red;
-    border: none;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.rank-menu button:hover {
-    background: darkred;
-}
-
-/* ======================= */
-/* MAIN CONTENT            */
-/* ======================= */
-main {
-    padding: 20px;
-}
-
-/* ======================= */
-/* STAFF GRID              */
-/* ======================= */
-.staff-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.staff-card {
-    background: #222;
-    border-radius: 10px;
-    text-align: center;
-    padding: 15px;
-}
-
-.staff-card img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 2px solid red;
-    margin-bottom: 10px;
-}
-
-/* ======================= */
-/* RESPONSIVE DESIGN       */
-/* ======================= */
-@media (max-width: 600px) {
-    .landing h1 {
-        font-size: 2em;
-    }
-    .grid {
-        grid-template-columns: 1fr;
-    }
-    nav {
-        flex-direction: column;
-    }
-    nav a {
-        margin: 5px 0;
-    }
+    background:darkred;
+    transform:scale(1.05);
 }
