@@ -1,31 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coins - Titan Rise</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo"><img src="assets/logo.png" alt="Titan Rise"></div>
+    <div id="user-login">
+        <input type="text" id="username" placeholder="Enter Username">
+        <button onclick="login()">Login</button>
+    </div>
+    <div id="user-info" style="display:none;">
+        <img id="playerhead" src="" alt="player head">
+        <span id="playername"></span>
+    </div>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="ranks.html">Ranks</a>
+    <a href="keys.html">Keys</a>
+    <a href="coins.html">Coins</a>
+    <a href="staff.html">Staff</a>
+</nav>
+
 <main>
     <h1>Coins</h1>
     <div class="grid">
-        <div class="card">
+        <!-- Alle coins gebruiken dezelfde afbeelding -->
+        <div class="card landscape">
             <img src="assets/coins/coin.png" alt="Coins">
             <h3>500 Coins</h3>
             <p>€5,25</p>
             <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
         </div>
-        <div class="card">
+        <div class="card landscape">
             <img src="assets/coins/coin.png" alt="Coins">
             <h3>1500 Coins (+100 Free)</h3>
             <p>€17,15</p>
             <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
         </div>
-        <div class="card">
+        <div class="card landscape">
             <img src="assets/coins/coin.png" alt="Coins">
             <h3>2500 Coins (+250 Free)</h3>
             <p>€27,43</p>
             <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
         </div>
-        <div class="card">
+        <div class="card landscape">
             <img src="assets/coins/coin.png" alt="Coins">
             <h3>8000 Coins (+500 Free)</h3>
             <p>€74,82</p>
             <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
         </div>
-        <div class="card">
+        <div class="card landscape">
             <img src="assets/coins/coin.png" alt="Coins">
             <h3>10000 Coins (+750 Free)</h3>
             <p>€115,50</p>
@@ -33,3 +63,7 @@
         </div>
     </div>
 </main>
+
+<script src="script.js"></script>
+</body>
+</html>
