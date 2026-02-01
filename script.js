@@ -1,29 +1,24 @@
 function login() {
     const username = document.getElementById('username').value.trim();
-    if(username) {
+    if(username){
         localStorage.setItem('titanUsername', username);
         showUserInfo();
     }
 }
 
-function showUserInfo() {
+function showUserInfo(){
     const username = localStorage.getItem('titanUsername');
-    if(username) {
+    if(username){
         document.getElementById('user-login').style.display = 'none';
         document.getElementById('user-info').style.display = 'flex';
         document.getElementById('playername').innerText = username;
-
-        // Laad de Minecraft avatar
-        const avatarURL = `https://mc-heads.net/avatar/${username}/50`;
-        document.getElementById('playerhead').src = avatarURL;
+        document.getElementById('playerhead').src = `https://mc-heads.net/avatar/${username}/50`;
     }
 }
 
-// Toggle Ranks menu
-function toggleRank(section) {
-    document.getElementById('permanent').style.display = section === 'permanent' ? 'block' : 'none';
-    document.getElementById('upgrades').style.display = section === 'upgrades' ? 'block' : 'none';
+function toggleRank(section){
+    document.getElementById('permanent').style.display = section==='permanent'?'grid':'none';
+    document.getElementById('upgrades').style.display = section==='upgrades'?'grid':'none';
 }
 
-// Run on load
 window.onload = showUserInfo;
