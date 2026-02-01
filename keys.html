@@ -8,24 +8,55 @@
 </head>
 <body>
 <header>
-    <div class="logo">Titan Rise</div>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="ranks.html">Ranks</a>
-        <a href="keys.html">Keys</a>
-        <a href="coins.html">Coins</a>
-        <a href="staff.html">Staff</a>
-    </nav>
+    <div class="logo"><img src="assets/logo.png" alt="Titan Rise"></div>
+    <div id="user-login">
+        <input type="text" id="username" placeholder="Enter Username">
+        <button onclick="login()">Login</button>
+    </div>
+    <div id="user-info" style="display:none;">
+        <img id="playerhead" src="" alt="player head">
+        <span id="playername"></span>
+    </div>
 </header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="ranks.html">Ranks</a>
+    <a href="keys.html">Keys</a>
+    <a href="coins.html">Coins</a>
+    <a href="staff.html">Staff</a>
+</nav>
 
 <main>
     <h1>Keys</h1>
-    <ul>
-        <li>Inferno Key: €3,99 <a href="https://your-tebex-link.com">Buy</a></li>
-        <li>Glacier Key: €5,99 <a href="https://your-tebex-link.com">Buy</a></li>
-        <li>Thunder Key: €5,99 <a href="https://your-tebex-link.com">Buy</a></li>
-        <li>Abyss Key: €6,50 <a href="https://your-tebex-link.com">Buy</a></li>
-    </ul>
+    <div class="grid">
+        <div class="card">
+            <img src="assets/keys/inferno.png" alt="Inferno Key">
+            <h3>Inferno Key</h3>
+            <p>€3,99</p>
+            <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
+        </div>
+        <div class="card">
+            <img src="assets/keys/glacier.png" alt="Glacier Key">
+            <h3>Glacier Key</h3>
+            <p>€5,99</p>
+            <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
+        </div>
+        <div class="card">
+            <img src="assets/keys/thunder.png" alt="Thunder Key">
+            <h3>Thunder Key</h3>
+            <p>€5,99</p>
+            <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
+        </div>
+        <div class="card">
+            <img src="assets/keys/abyss.png" alt="Abyss Key">
+            <h3>Abyss Key</h3>
+            <p>€6,50</p>
+            <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
+        </div>
+    </div>
 </main>
+
+<script src="script.js"></script>
 </body>
 </html>
