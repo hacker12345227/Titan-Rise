@@ -8,25 +8,61 @@
 </head>
 <body>
 <header>
-    <div class="logo">Titan Rise</div>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="ranks.html">Ranks</a>
-        <a href="keys.html">Keys</a>
-        <a href="coins.html">Coins</a>
-        <a href="staff.html">Staff</a>
-    </nav>
+    <div class="logo"><img src="assets/logo.png" alt="Titan Rise"></div>
+    <div id="user-login">
+        <input type="text" id="username" placeholder="Enter Username">
+        <button onclick="login()">Login</button>
+    </div>
+    <div id="user-info" style="display:none;">
+        <img id="playerhead" src="" alt="player head">
+        <span id="playername"></span>
+    </div>
 </header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="ranks.html">Ranks</a>
+    <a href="keys.html">Keys</a>
+    <a href="coins.html">Coins</a>
+    <a href="staff.html">Staff</a>
+</nav>
 
 <main>
     <h1>Coins</h1>
-    <ul>
-        <li>500 Coins: €5,25 <a href="https://your-tebex-link.com">Buy</a></li>
-        <li>1500 Coins (+100 Free): €17,15 <a href="https://your-tebex-link.com">Buy</a></li>
-        <li>2500 Coins (+250 Free): €27,43 <a href="https://your-tebex-link.com">Buy</a></li>
-        <li>8000 Coins (+500 Free): €74,82 <a href="https://your-tebex-link.com">Buy</a></li>
-        <li>10000 Coins (+750 Free): €115,50 <a href="https://your-tebex-link.com">Buy</a></li>
-    </ul>
+    <div class="grid">
+        <div class="card">
+            <img src="assets/coins/500.png" alt="500 Coins">
+            <h3>500 Coins</h3>
+            <p>€5,25</p>
+            <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
+        </div>
+        <div class="card">
+            <img src="assets/coins/1500.png" alt="1500 Coins">
+            <h3>1500 Coins (+100 Free)</h3>
+            <p>€17,15</p>
+            <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
+        </div>
+        <div class="card">
+            <img src="assets/coins/2500.png" alt="2500 Coins">
+            <h3>2500 Coins (+250 Free)</h3>
+            <p>€27,43</p>
+            <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
+        </div>
+        <div class="card">
+            <img src="assets/coins/8000.png" alt="8000 Coins">
+            <h3>8000 Coins (+500 Free)</h3>
+            <p>€74,82</p>
+            <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
+        </div>
+        <div class="card">
+            <img src="assets/coins/10000.png" alt="10000 Coins">
+            <h3>10000 Coins (+750 Free)</h3>
+            <p>€115,50</p>
+            <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
+        </div>
+    </div>
 </main>
+
+<script src="script.js"></script>
 </body>
 </html>
