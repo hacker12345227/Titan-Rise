@@ -1,37 +1,55 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ranks</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ranks - Titan Rise</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="ranks.html">Ranks</a>
-    <a href="keys.html">Keys</a>
-    <a href="rules.html">Rules</a>
-    <a href="staff.html">Staff</a>
-  </nav>
+    <div class="logo">Titan Rise</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="ranks.html">Ranks</a>
+        <a href="keys.html">Keys</a>
+        <a href="coins.html">Coins</a>
+        <a href="staff.html">Staff</a>
+    </nav>
 </header>
 
-<div class="container">
-  <h1>Ranks Shop</h1>
+<main>
+    <h1>Ranks</h1>
+    <div class="rank-menu">
+        <button onclick="toggleRank('permanent')">Permanent Ranks</button>
+        <button onclick="toggleRank('upgrades')">Rank Upgrades</button>
+    </div>
 
-  <div class="card">
-    <h2>VIP</h2>
-    <p>Prijs: €5</p>
-    <a class="button" href="#">Koop</a>
-  </div>
+    <div id="permanent" class="rank-section">
+        <h2>Permanent Ranks</h2>
+        <ul>
+            <li>Novice Rank: €4,99 <a href="https://your-tebex-link.com">Buy</a></li>
+            <li>Warrior Rank: €7,50 <a href="https://your-tebex-link.com">Buy</a></li>
+            <li>Knight Rank: €12,99 <a href="https://your-tebex-link.com">Buy</a></li>
+            <li>Elite Rank: €28,99 <a href="https://your-tebex-link.com">Buy</a></li>
+            <li>Gladiator Rank: €45,99 <a href="https://your-tebex-link.com">Buy</a></li>
+            <li>Immortal Rank: €59,99 <a href="https://your-tebex-link.com">Buy</a></li>
+        </ul>
+    </div>
 
-  <div class="card">
-    <h2>MVP</h2>
-    <p>Prijs: €10</p>
-    <a class="button" href="#">Koop</a>
-  </div>
-</div>
+    <div id="upgrades" class="rank-section" style="display:none;">
+        <h2>Rank Upgrades</h2>
+        <ul>
+            <li>Novice Rank+: €2,99 <a href="https://your-tebex-link.com">Buy</a></li>
+            <li>Warrior Rank+: €4,99 <a href="https://your-tebex-link.com">Buy</a></li>
+            <li>Knight Rank+: €5,99 <a href="https://your-tebex-link.com">Buy</a></li>
+            <li>Elite Rank+: €12,99 <a href="https://your-tebex-link.com">Buy</a></li>
+            <li>Gladiator Rank+: €18,99 <a href="https://your-tebex-link.com">Buy</a></li>
+            <li>Immortal Rank+: €27,99 <a href="https://your-tebex-link.com">Buy</a></li>
+        </ul>
+    </div>
+</main>
 
-<footer>© 2026 Titan Rise</footer>
+<script src="script.js"></script>
 </body>
 </html>
