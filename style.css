@@ -2,60 +2,96 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 body {
-  background-color: #000;
-  color: #fff;
+  background: radial-gradient(circle at top, #1a0000, #000);
+  color: #eee;
 }
 
 header {
-  background-color: #0b0b0b;
-  padding: 20px;
-  border-bottom: 2px solid red;
+  background: linear-gradient(90deg, #000, #1a0000, #000);
+  padding: 20px 40px;
+  border-bottom: 3px solid crimson;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+}
+
+.logo h1 {
+  color: crimson;
+  letter-spacing: 2px;
 }
 
 nav a {
-  color: red;
-  margin-right: 15px;
+  color: #ff4d4d;
+  margin-left: 18px;
   text-decoration: none;
   font-weight: bold;
 }
 
 nav a:hover {
-  color: #fff;
+  color: white;
 }
 
 .container {
-  padding: 40px;
+  padding: 60px;
 }
 
 .card {
-  background-color: #111;
-  border: 1px solid red;
-  padding: 20px;
-  margin-bottom: 20px;
+  background: linear-gradient(145deg, #0f0f0f, #1a0000);
+  border: 1px solid crimson;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,0,0,0.15);
+}
+
+.card h2 {
+  color: #ff4d4d;
 }
 
 .button {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: red;
-  color: black;
+  margin-top: 10px;
+  padding: 12px 26px;
+  background: linear-gradient(90deg, red, darkred);
+  color: white;
   text-decoration: none;
   font-weight: bold;
+  border-radius: 6px;
 }
 
 .button:hover {
-  background-color: darkred;
-  color: white;
+  filter: brightness(1.2);
+}
+
+.staff {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.staff img {
+  width: 64px;
+  height: 64px;
 }
 
 footer {
   text-align: center;
-  padding: 20px;
-  border-top: 2px solid red;
-  margin-top: 40px;
+  padding: 25px;
+  border-top: 3px solid crimson;
   color: #777;
 }
