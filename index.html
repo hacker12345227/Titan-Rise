@@ -1,121 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ranks - Titan Rise</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titan Rise</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <div class="logo">Titan Rise</div>
-    <div id="user-login">
-        <input type="text" id="username" placeholder="Enter Username">
-        <button onclick="login()">Login</button>
-    </div>
-    <div id="user-info" style="display:none;">
-        <img id="playerhead" src="" alt="player head">
-        <span id="playername"></span>
-    </div>
-</header>
+    <header>
+        <div class="logo">Titan Rise</div>
+        <div id="user-login">
+            <input type="text" id="username" placeholder="Enter Username">
+            <button onclick="login()">Login</button>
+        </div>
+        <div id="user-info" style="display:none;">
+            <img id="playerhead" src="assets/playerhead.png" alt="player head">
+            <span id="playername"></span>
+        </div>
+    </header>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="ranks.html">Ranks</a>
-    <a href="keys.html">Keys</a>
-    <a href="coins.html">Coins</a>
-    <a href="staff.html">Staff</a>
-</nav>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="ranks.html">Ranks</a>
+        <a href="keys.html">Keys</a>
+        <a href="coins.html">Coins</a>
+        <a href="staff.html">Staff</a>
+    </nav>
 
-<main>
-    <h1>Ranks</h1>
+    <main>
+        <h1>Welcome to Titan Rise</h1>
+        <p>The ultimate Minecraft server experience. Join now and rise to glory!</p>
+    </main>
 
-    <div class="rank-menu">
-        <button onclick="toggleRank('permanent')">Permanent Ranks</button>
-        <button onclick="toggleRank('upgrades')">Rank Upgrades</button>
-    </div>
-
-    <!-- Permanent Ranks -->
-    <div id="permanent" class="rank-section grid">
-        <div class="card">
-            <img src="assets/novice.png" alt="Novice Rank">
-            <h3>Novice Rank</h3>
-            <p>€4,99</p>
-            <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
-        </div>
-        <div class="card">
-            <img src="assets/warrior.png" alt="Warrior Rank">
-            <h3>Warrior Rank</h3>
-            <p>€7,50</p>
-            <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
-        </div>
-        <div class="card">
-            <img src="assets/knight.png" alt="Knight Rank">
-            <h3>Knight Rank</h3>
-            <p>€12,99</p>
-            <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
-        </div>
-        <div class="card">
-            <img src="assets/elite.png" alt="Elite Rank">
-            <h3>Elite Rank</h3>
-            <p>€28,99</p>
-            <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
-        </div>
-        <div class="card">
-            <img src="assets/gladiator.png" alt="Gladiator Rank">
-            <h3>Gladiator Rank</h3>
-            <p>€45,99</p>
-            <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
-        </div>
-        <div class="card">
-            <img src="assets/immortal.png" alt="Immortal Rank">
-            <h3>Immortal Rank</h3>
-            <p>€59,99</p>
-            <a href="https://your-tebex-link.com" class="buy-btn">Buy Now</a>
-        </div>
-    </div>
-
-    <!-- Rank Upgrades -->
-    <div id="upgrades" class="rank-section grid" style="display:none;">
-        <div class="card">
-            <img src="assets/novice.png" alt="Novice Rank+">
-            <h3>Novice Rank+</h3>
-            <p>€2,99</p>
-            <a href="https://your-tebex-link.com" class="buy-btn">Upgrade</a>
-        </div>
-        <div class="card">
-            <img src="assets/warrior.png" alt="Warrior Rank+">
-            <h3>Warrior Rank+</h3>
-            <p>€4,99</p>
-            <a href="https://your-tebex-link.com" class="buy-btn">Upgrade</a>
-        </div>
-        <div class="card">
-            <img src="assets/knight.png" alt="Knight Rank+">
-            <h3>Knight Rank+</h3>
-            <p>€5,99</p>
-            <a href="https://your-tebex-link.com" class="buy-btn">Upgrade</a>
-        </div>
-        <div class="card">
-            <img src="assets/elite.png" alt="Elite Rank+">
-            <h3>Elite Rank+</h3>
-            <p>€12,99</p>
-            <a href="https://your-tebex-link.com" class="buy-btn">Upgrade</a>
-        </div>
-        <div class="card">
-            <img src="assets/gladiator.png" alt="Gladiator Rank+">
-            <h3>Gladiator Rank+</h3>
-            <p>€18,99</p>
-            <a href="https://your-tebex-link.com" class="buy-btn">Upgrade</a>
-        </div>
-        <div class="card">
-            <img src="assets/immortal.png" alt="Immortal Rank+">
-            <h3>Immortal Rank+</h3>
-            <p>€27,99</p>
-            <a href="https://your-tebex-link.com" class="buy-btn">Upgrade</a>
-        </div>
-    </div>
-</main>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
