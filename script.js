@@ -16,6 +16,12 @@ function showUserInfo(){
     }
 }
 
+function logout() {
+    localStorage.removeItem('titanUsername');
+    document.getElementById('user-info').style.display = 'none';
+    document.getElementById('user-login').style.display = 'flex';
+}
+
 function toggleRank(section){
     document.getElementById('permanent').style.display = section==='permanent'?'grid':'none';
     document.getElementById('upgrades').style.display = section==='upgrades'?'grid':'none';
