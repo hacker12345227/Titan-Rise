@@ -8,21 +8,36 @@
 </head>
 <body>
 <header>
-    <div class="logo">Titan Rise</div>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="ranks.html">Ranks</a>
-        <a href="keys.html">Keys</a>
-        <a href="coins.html">Coins</a>
-        <a href="staff.html">Staff</a>
-    </nav>
+    <div class="logo"><img src="assets/logo.png" alt="Titan Rise"></div>
+    <div id="user-login">
+        <input type="text" id="username" placeholder="Enter Username">
+        <button onclick="login()">Login</button>
+    </div>
+    <div id="user-info" style="display:none;">
+        <img id="playerhead" src="" alt="player head">
+        <span id="playername"></span>
+    </div>
 </header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="ranks.html">Ranks</a>
+    <a href="keys.html">Keys</a>
+    <a href="coins.html">Coins</a>
+    <a href="staff.html">Staff</a>
+</nav>
 
 <main>
     <h1>Staff</h1>
-    <ul>
-        <li>Server Owner: GRim_REaPeR_XI</li>
-    </ul>
+    <div class="grid">
+        <div class="card">
+            <img src="https://mc-heads.net/avatar/GRim_REaPeR_XI/50" alt="GRim_REaPeR_XI">
+            <h3>GRim_REaPeR_XI</h3>
+            <p>Server Owner</p>
+        </div>
+    </div>
 </main>
+
+<script src="script.js"></script>
 </body>
 </html>
