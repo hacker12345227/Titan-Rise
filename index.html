@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titan Rise</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Titan Rise</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Titan Rise</div>
-        <div id="user-login">
-            <input type="text" id="username" placeholder="Enter Username">
-            <button onclick="login()">Login</button>
-        </div>
-        <div id="user-info" style="display:none;">
-            <img id="playerhead" src="assets/playerhead.png" alt="player head">
-            <span id="playername"></span>
-        </div>
-    </header>
+<header>
+    <div class="logo"><img src="assets/logo.png" alt="Titan Rise"></div>
+    <div id="user-login">
+        <input type="text" id="username" placeholder="Enter Username">
+        <button onclick="login()">Login</button>
+    </div>
+    <div id="user-info" style="display:none;">
+        <img id="playerhead" src="" alt="player head">
+        <span id="playername"></span>
+    </div>
+</header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="ranks.html">Ranks</a>
-        <a href="keys.html">Keys</a>
-        <a href="coins.html">Coins</a>
-        <a href="staff.html">Staff</a>
-    </nav>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="ranks.html">Ranks</a>
+    <a href="keys.html">Keys</a>
+    <a href="coins.html">Coins</a>
+    <a href="staff.html">Staff</a>
+</nav>
 
-    <main>
-        <h1>Welcome to Titan Rise</h1>
-        <p>The ultimate Minecraft server experience. Join now and rise to glory!</p>
-    </main>
+<main class="landing">
+    <h1>Welcome to <span class="highlight">Titan Rise</span></h1>
+    <p>The ultimate Minecraft server experience. Join now and rise to glory!</p>
+    <a href="ranks.html" class="cta-btn">View Ranks</a>
+</main>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
