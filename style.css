@@ -1,15 +1,52 @@
 ```css
 /* =========================================================
-   TITAN RISE — STYLE.CSS (VOLLEDIGE VERSIE)
-   MET WERKENDE MINECRAFT GRADIENT OP TITELS + NORMALE TEKST
+   TITAN RISE — COMPLETE STYLE.CSS
+   BLACK / RED — PROFESSIONAL MINECRAFT STORE THEME
    ========================================================= */
 
-/* ---------- MINECRAFT RED GRADIENT (WERKEND) ---------- */
+/* ---------- ROOT VARIABLES ---------- */
+:root {
+  --bg-dark: #0b0b0b;
+  --bg-card: #111111;
+  --bg-card-hover: #141414;
+  --red: #9a0000;
+  --red-bright: #c00000;
+  --border-red: #2a0000;
+  --text-light: #e5e5e5;
+  --shadow: 0 0 20px rgba(155, 0, 0, 0.15);
+  --radius: 16px;
+  --gap: 16px;
+  --widget-padding: 20px;
+  --content-padding: 24px;
+}
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top, #120000, #060000, #000000);
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text-light);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* =========================================================
+   MINECRAFT RED GRADIENT — TITELS + NORMALE TEKST
+   ========================================================= */
 
 h1, h2, h3, h4, h5, h6,
 p,
-span:not(.btn):not(.success-btn),
-div:not(.btn):not(.success-btn),
+span:not(.btn),
+div:not(.btn):not(.product-card):not(.navbar),
 li,
 strong,
 b,
@@ -32,100 +69,222 @@ label {
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  /* BELANGRIJK — zorgt dat de gradient ook echt zichtbaar is */
   display: inline-block;
 }
 
-/* Zorg dat gewone layout-divs niet breken */
-.success-container div,
-.store-product div,
-.navbar div {
-  display: block; 
+/* Hoofd-titel styling */
+h1 {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* ==================== JOUW BESTAANDE CSS (ONVERANDERD) ==================== */
-
-/* (Hieronder staat jouw originele CSS – niets verwijderd,
-   alleen de gradient is erboven toegevoegd) */
-
-.site-navigation .log-out a::before {
-  content: "";
-  display: block;
-  width: 24px;
-  height: 24px;
-  background-color: currentColor;
-  mask: url("https://template-assets.tebex.io/images/log-out.svg") center center no-repeat;
-  mask-size: contain;
+/* Subtitel */
+h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
-/* ---------- NAVIGATION ---------- */
+/* =========================================================
+   NAVBAR
+   ========================================================= */
 
-@media (width > 960px) {
-  .navigation-horizontal .close-navigation {
-    display: none;
-  }
-  .navigation-horizontal .menu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: calc(var(--widget-padding) / 2);
-    line-height: 28px;
-    background: var(--color-brighter-bg);
-    font-size: 18px;
-    font-weight: 700;
-  }
+.navbar {
+  background: #080000;
+  border-bottom: 2px solid var(--border-red);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* ---------- WIDGETS ---------- */
-
-.widget {
-  padding: var(--widget-padding);
+.navbar img {
+  height: 45px;
 }
 
-.widget-title {
-  margin-bottom: var(--widget-padding);
-  font-size: 20px;
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
   font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-/* ---------- FOOTER ---------- */
-
-.site-footer-inner {
-  position: relative;
-  padding: 20px var(--content-padding);
+.nav-links a:hover {
+  color: var(--red-bright);
 }
 
-/* ---------- POPUP ---------- */
+/* =========================================================
+   LOGIN AREA
+   ========================================================= */
 
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 100vw;
-  z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.8);
+.login-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* ---------- STORE PRODUCTS ---------- */
+.player-head {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--red);
+}
 
-.store-products-tiered {
+/* Logout icon button */
+.logout-btn {
+  width: 28px;
+  height: 28px;
+  background: url("assets/icons/logout.png") center/contain no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* =========================================================
+   PRODUCT GRID
+   ========================================================= */
+
+.products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
 }
 
-.store-product-tiered {
-  padding: var(--gap);
+/* PRODUCT CARD */
+.product-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-red);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: 0.2s ease;
 }
 
-/* ---------- BASKET ---------- */
-
-.basket {
-  position: relative;
-  z-index: 1001;
+.product-card:hover {
+  transform: translateY(-4px);
+  background: var(--bg-card-hover);
 }
 
-/* ================== EINDE STYLESHEET ================== */
+/* Bovenste liggende afbeelding */
+.product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+/* Product info */
+.product-info {
+  padding: 16px;
+  text-align: center;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background: linear-gradient(90deg, #700000, #c00000);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 12px;
+  border: 1px solid var(--border-red);
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #900000, #ff0000);
+}
+
+/* =========================================================
+   SUCCESS / CHECKOUT PAGE
+   ========================================================= */
+
+.success-container {
+  max-width: 600px;
+  margin: 60px auto;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 30px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.success-icon {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+/* Product image in success page */
+#productIcon {
+  width: 120px;
+  margin: 15px 0;
+}
+
+/* =========================================================
+   STAFF PAGE
+   ========================================================= */
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.staff-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 15px;
+  text-align: center;
+  border: 1px solid var(--border-red);
+}
+
+.staff-card img {
+  width: 80px;   /* FIX: avatars niet meer te groot */
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--red);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+  background: #080000;
+  border-top: 2px solid var(--border-red);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 ```
