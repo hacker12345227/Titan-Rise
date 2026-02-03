@@ -156,26 +156,42 @@ const productName = document.getElementById("productname");
 const deliveryText = document.getElementById("deliverytext");
 const productIcon = document.getElementById("productIcon");
 
-if (product === "novice") {
-  productName.innerText = "Novice Rank";
-  deliveryText.innerText = "Your rank has been added in-game.";
-  productIcon.src = "/assets/novice.png";
+let folder = "assets/product";
+let statusText = "Delivery processing...";
+
+// ----- RANKS -----
+const ranks = ["novice","warrior","knight","elite","gladiator","immortal"];
+// ----- KEYS -----
+const keys = ["inferno","glacier","thunder","abyss"];
+// ----- COINS -----
+const coins = ["coins500","coins1500","coins2500","coins8000","coins10000"];
+
+if (ranks.includes(product)) {
+  folder = "assets/ranks";
+  statusText = "Rank Delivered";
 }
-else if (product === "warrior") {
-  productName.innerText = "Warrior Rank";
-  deliveryText.innerText = "Your rank + perks are activated.";
-  productIcon.src = "/assets/warrior.png";
+else if (keys.includes(product)) {
+  folder = "assets/keys";
+  statusText = "Key Delivered";
 }
-else if (product === "knight") {
-  productName.innerText = "Knight Rank";
-  deliveryText.innerText = "Your rank is now active.";
-  productIcon.src = "/assets/knight.png";
+else if (coins.includes(product)) {
+  folder = "assets/coins";
+  statusText = "Coins Credited";
+  productIcon.src = "/assets/coins/coin.png"; // ALTIJD dezelfde coin afbeelding
 }
-else {
-  productName.innerText = "Titan Rise Product";
-  deliveryText.innerText = "Delivery is being processed.";
-  productIcon.src = "/assets/product.png";
+
+// Mooie naam in titel
+productName.innerText = product
+  ? product.replace(/([A-Z])/g, " $1")
+  : "Titan Rise Product";
+
+deliveryText.innerText = statusText;
+
+// Afbeelding instellen
+if (!coins.includes(product)) {
+  productIcon.src = `/${folder}/${product}.png`;
 }
+
 
 // ======== RANDOM ORDER NUMBER ========
 document.getElementById("ordernr").innerText =
