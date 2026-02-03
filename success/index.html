@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Betaling Geslaagd | Titan Rise</title>
+<title>Payment Successful | Titan Rise</title>
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="stylesheet" href="/style.css">
 
@@ -25,11 +25,18 @@ body {
   box-shadow: 0 0 20px rgba(255,0,0,0.2);
 }
 
-.check-icon {
-  font-size: 70px;
+/* ======= ICONS YOU CAN CHANGE ======= */
+.success-icon {
+  width: 120px;
   margin-bottom: 10px;
 }
 
+.product-icon {
+  width: 64px;
+  margin-bottom: 10px;
+}
+
+/* ======= PLAYER INFO ======= */
 .player-box {
   display: flex;
   align-items: center;
@@ -45,6 +52,7 @@ body {
   border: 2px solid red;
 }
 
+/* ======= BOXES ======= */
 .order-box {
   background: #111;
   padding: 15px;
@@ -63,6 +71,7 @@ body {
   border: 1px solid #ff0000;
 }
 
+/* ======= BUTTONS ======= */
 .success-btn {
   display: inline-block;
   margin: 10px;
@@ -78,6 +87,7 @@ body {
   background: #ff0000;
 }
 
+/* ======= CONFETTI ======= */
 .confetti {
   position: fixed;
   top: 0;
@@ -94,13 +104,16 @@ body {
 <canvas id="confetti" class="confetti"></canvas>
 
 <div class="success-container">
-  <div class="check-icon">✅</div>
-  <h1 style="color:#ff0000;">Betaling Geslaagd!</h1>
+
+  <!-- ===== CHANGE THIS IMAGE ===== -->
+  <img src="/assets/success.png" class="success-icon" id="successIcon" alt="Success">
+
+  <h1 style="color:#ff0000;">Payment Successful!</h1>
 
   <p>
-    Bedankt voor je aankoop op <b>Titan Rise</b>!  
+    Thank you for your purchase on <b>Titan Rise</b>!  
     <br>
-    Je product wordt **binnen enkele minuten automatisch geleverd**.
+    Your items will be delivered **automatically in-game within a few minutes.**
   </p>
 
   <div class="player-box">
@@ -109,18 +122,21 @@ body {
   </div>
 
   <div class="product-box">
-    <p><b>Gekocht product:</b></p>
-    <h3 id="productname" style="color:#ff0000;">Laden...</h3>
+    <!-- ===== CHANGE THIS IMAGE PER PRODUCT IF YOU WANT ===== -->
+    <img src="/assets/novice.png" class="product-icon" id="productIcon" alt="Product">
+
+    <p><b>Purchased product:</b></p>
+    <h3 id="productname" style="color:#ff0000;">Loading...</h3>
     <p id="deliverytext" style="color:lime;"></p>
   </div>
 
   <div class="order-box">
-    <p><b>Ordernummer:</b> <span id="ordernr">#TR-</span></p>
-    <p><b>Status:</b> <span style="color:lime;">Afgeleverd</span></p>
+    <p><b>Order ID:</b> <span id="ordernr">#TR-</span></p>
+    <p><b>Status:</b> <span style="color:lime;">Delivered</span></p>
   </div>
 
-  <a href="/" class="success-btn">🏠 Terug naar Home</a>
-  <a href="https://discord.gg/YOURSERVER" class="success-btn">💬 Join Discord</a>
+  <a href="/" class="success-btn">Home</a>
+  <a href="https://discord.gg/YOURSERVER" class="success-btn">Join Discord</a>
 </div>
 
 <script>
@@ -132,31 +148,36 @@ if (username) {
     "https://minotar.net/avatar/" + username + "/64";
 }
 
-// ======== PRODUCT DETECTIE VIA URL ========
+// ======== PRODUCT DETECTION VIA URL ========
 const params = new URLSearchParams(window.location.search);
 const product = params.get("product");
 
 const productName = document.getElementById("productname");
 const deliveryText = document.getElementById("deliverytext");
+const productIcon = document.getElementById("productIcon");
 
 if (product === "novice") {
-  productName.innerText = "🟥 Novice Rank";
-  deliveryText.innerText = "✔️ Rank wordt automatisch toegevoegd in-game.";
+  productName.innerText = "Novice Rank";
+  deliveryText.innerText = "Your rank has been added in-game.";
+  productIcon.src = "/assets/novice.png";
 }
-else if (product === "hero") {
-  productName.innerText = "🟪 Hero Rank";
-  deliveryText.innerText = "✔️ Rank + perks worden toegevoegd.";
+else if (product === "warrior") {
+  productName.innerText = "Warrior Rank";
+  deliveryText.innerText = "Your rank + perks are activated.";
+  productIcon.src = "/assets/warrior.png";
 }
-else if (product === "vip") {
-  productName.innerText = "🟨 VIP Rank";
-  deliveryText.innerText = "✔️ VIP-voordelen geactiveerd.";
+else if (product === "knight") {
+  productName.innerText = "Knight Rank";
+  deliveryText.innerText = "Your rank is now active.";
+  productIcon.src = "/assets/knight.png";
 }
 else {
   productName.innerText = "Titan Rise Product";
-  deliveryText.innerText = "✔️ Levering wordt verwerkt.";
+  deliveryText.innerText = "Delivery is being processed.";
+  productIcon.src = "/assets/product.png";
 }
 
-// ======== RANDOM ORDERNUMMER ========
+// ======== RANDOM ORDER NUMBER ========
 document.getElementById("ordernr").innerText =
   "#TR-" + Math.floor(Math.random() * 900000 + 100000);
 
