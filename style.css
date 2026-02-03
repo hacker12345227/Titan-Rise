@@ -108,3 +108,31 @@ nav a:hover { color:red; }
     .landing h1 { font-size:2em; }
     .card img, .card.landscape img { height:100px; }
 }
+/* ===== MINECRAFT RED GRADIENT — ALLEEN VOOR TITELS EN NORMALE TEKST ===== */
+
+h1, h2, h3, h4, h5, h6,
+p,
+span:not(.btn),
+div:not(.btn),
+label,
+li,
+strong,
+b {
+  background: linear-gradient(90deg,
+    #5A0000,
+    #6A0000,
+    #7A0000,
+    #8A0000,
+    #9A0000,
+    #A50000,
+    #B00000,
+    #A50000,
+    #8A0000,
+    #7A0000,
+    #6A0000,
+    #5A0000,
+    #4A0000
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
