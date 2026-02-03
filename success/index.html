@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Betaling Geslaagd | Titan Rise</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/style.css">
+
+<style>
+body {
+  background: radial-gradient(circle, #0f0f0f, #000);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.success-container {
+  max-width: 900px;
+  margin: 120px auto;
+  text-align: center;
+  background: #0b0b0b;
+  border: 2px solid #c00000;
+  border-radius: 25px;
+  padding: 50px;
+  box-shadow: 0 0 20px rgba(255,0,0,0.2);
+}
+
+.check-icon {
+  font-size: 70px;
+  margin-bottom: 10px;
+}
+
+.player-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+#playerhead {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  border: 2px solid red;
+}
+
+.order-box {
+  background: #111;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 450px;
+  border: 1px solid #c00000;
+}
+
+.product-box {
+  background: #0c0c0c;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 450px;
+  border: 1px solid #ff0000;
+}
+
+.success-btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  background: #c00000;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.success-btn:hover {
+  background: #ff0000;
+}
+
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confetti" class="confetti"></canvas>
+
+<div class="success-container">
+  <div class="check-icon">✅</div>
+  <h1 style="color:#ff0000;">Betaling Geslaagd!</h1>
+
+  <p>
+    Bedankt voor je aankoop op <b>Titan Rise</b>!  
+    <br>
+    Je product wordt **binnen enkele minuten automatisch geleverd**.
+  </p>
+
+  <div class="player-box">
+    <img id="playerhead" src="" alt="Player Head">
+    <span id="playername" style="font-size:20px; font-weight:bold;"></span>
+  </div>
+
+  <div class="product-box">
+    <p><b>Gekocht product:</b></p>
+    <h3 id="productname" style="color:#ff0000;">Laden...</h3>
+    <p id="deliverytext" style="color:lime;"></p>
+  </div>
+
+  <div class="order-box">
+    <p><b>Ordernummer:</b> <span id="ordernr">#TR-</span></p>
+    <p><b>Status:</b> <span style="color:lime;">Afgeleverd</span></p>
+  </div>
+
+  <a href="/" class="success-btn">🏠 Terug naar Home</a>
+  <a href="https://discord.gg/YOURSERVER" class="success-btn">💬 Join Discord</a>
+</div>
+
+<script>
+// ======== PLAYER INFO ========
+const username = localStorage.getItem("titanUsername");
+if (username) {
+  document.getElementById("playername").innerText = username;
+  document.getElementById("playerhead").src =
+    "https://minotar.net/avatar/" + username + "/64";
+}
+
+// ======== PRODUCT DETECTIE VIA URL ========
+const params = new URLSearchParams(window.location.search);
+const product = params.get("product");
+
+const productName = document.getElementById("productname");
+const deliveryText = document.getElementById("deliverytext");
+
+if (product === "novice") {
+  productName.innerText = "🟥 Novice Rank";
+  deliveryText.innerText = "✔️ Rank wordt automatisch toegevoegd in-game.";
+}
+else if (product === "hero") {
+  productName.innerText = "🟪 Hero Rank";
+  deliveryText.innerText = "✔️ Rank + perks worden toegevoegd.";
+}
+else if (product === "vip") {
+  productName.innerText = "🟨 VIP Rank";
+  deliveryText.innerText = "✔️ VIP-voordelen geactiveerd.";
+}
+else {
+  productName.innerText = "Titan Rise Product";
+  deliveryText.innerText = "✔️ Levering wordt verwerkt.";
+}
+
+// ======== RANDOM ORDERNUMMER ========
+document.getElementById("ordernr").innerText =
+  "#TR-" + Math.floor(Math.random() * 900000 + 100000);
+
+// ======== CONFETTI EFFECT ========
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+for (let i = 0; i < 150; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 5 + 2,
+    d: Math.random() * 2 + 1
+  });
+}
+
+function drawConfetti() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "red";
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fill();
+    p.y += p.d;
+    if (p.y > canvas.height) p.y = 0;
+  });
+  requestAnimationFrame(drawConfetti);
+}
+drawConfetti();
+</script>
+
+</body>
+</html>
