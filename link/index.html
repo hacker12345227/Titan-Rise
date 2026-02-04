@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Titan Rise - Account Linking</title>
+<style>
+body {
+    background: #0b0b0b;
+    color: white;
+    font-family: Segoe UI, Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+.container {
+    max-width: 600px;
+    margin: 80px auto;
+    background: #111;
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid #3B0E5D;
+}
+h1 { color: #9b5cff; }
+.btn {
+    display: inline-block;
+    margin: 15px;
+    padding: 12px 20px;
+    background: #3B0E5D;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+.code-box {
+    background:#0b0b0b;
+    padding:10px;
+    border-radius:8px;
+    border:1px solid #3B0E5D;
+    font-size:18px;
+}
+</style>
+<script>
+function getCode() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("code") || "GEEN-CODE";
+}
+window.onload = function() {
+    document.getElementById("code").innerText = getCode();
+};
+</script>
+</head>
+<body>
+
+<div class="container">
+    <h1>🔗 Link your account</h1>
+
+    <p>Step 1 — Join our Discord:</p>
+    <a class="btn" href="https://discord.gg/rw2AQr3k" target="_blank">
+        JOIN DISCORD
+    </a>
+
+    <hr style="border-color:#3B0E5D; margin:20px 0;">
+
+    <p>Step 2 — In Discord, type:</p>
+    <div class="code-box">
+        /link <span id="code"></span>
+    </div>
+
+    <p>This will link your Minecraft account to Discord.</p>
+</div>
+
+</body>
+</html>
