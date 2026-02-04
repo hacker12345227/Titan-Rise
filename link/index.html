@@ -4,111 +4,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Link Your Account | Titan Rise</title>
-<link rel="icon" type="image/png" href="../favicon.png">
 <link rel="stylesheet" href="../style.css">
 <style>
-.link-container {
-  max-width: 700px;
-  margin: 60px auto;
-  background: #111;
-  border-radius: 16px;
-  padding: 30px;
-  text-align: center;
-  border: 1px solid #2a0000;
-  box-shadow: 0 0 20px rgba(155,0,0,0.15);
-}
-.code-box {
-  font-size: 28px;
-  letter-spacing: 3px;
-  background: #080000;
-  border: 1px solid #2a0000;
-  padding: 15px;
-  margin: 20px 0;
-  border-radius: 10px;
-  font-weight: bold;
-}
-.steps {
-  text-align: left;
-  margin-top: 25px;
-}
-.step {
-  margin-bottom: 15px;
-}
-.discord-btn {
-  display: inline-block;
-  padding: 12px 18px;
-  background: #5865F2;
-  color: white;
-  text-decoration: none;
-  border-radius: 10px;
-  font-weight: bold;
-}
-.discord-btn:hover {
-  background: #4752c4;
-}
+.link-container { max-width:700px; margin:60px auto; background:#111; border-radius:16px; padding:30px; text-align:center; border:1px solid #2a0000; box-shadow:0 0 20px rgba(155,0,0,0.15);}
+.code-box { font-size:28px; letter-spacing:3px; background:#080000; border:1px solid #2a0000; padding:15px; margin:20px 0; border-radius:10px; font-weight:bold;}
+.discord-btn { display:inline-block; padding:12px 18px; background:#5865F2; color:white; text-decoration:none; border-radius:10px; font-weight:bold;}
+.discord-btn:hover { background:#4752c4; }
 </style>
 </head>
 <body>
-
-<header>
-    <div class="logo"><img src="../assets/serverlogo.png" alt="Titan Rise"></div>
-</header>
-
-<nav>
-    <a href="../">Home</a>
-    <a href="../ranks/">Ranks</a>
-    <a href="../keys/">Keys</a>
-    <a href="../coins/">Coins</a>
-    <a href="../staff/">Staff</a>
-</nav>
-
-<div class="container">
-
 <div class="link-container">
-
 <h1>Link Your Account</h1>
 <p>Generate your unique code and link your Minecraft account to our Discord.</p>
 
-<div class="code-box" id="linkCode">Loading...</div>
+<input type="text" id="mcname" placeholder="Enter your Minecraft username">
+<button onclick="generateCode()">Generate Code</button>
+
+<div class="code-box" id="linkCode">Your code will appear here</div>
 
 <a class="discord-btn" href="https://discord.gg/V2Vg3G8PzC" target="_blank">Join Discord</a>
-
-<div class="steps">
-<h2>How to link</h2>
-
-<div class="step"><strong>Step 1:</strong> Join our Discord server using the button above.</div>
-<div class="step"><strong>Step 2:</strong> In Discord, type this command in any channel:</div>
-
-<div class="code-box">/link <span id="commandCode">LOADING</span></div>
-</div>
-
-</div>
-
 </div>
 
 <script>
-// ---- CONFIG ----
-// Vul hier je FastAPI server in, bv: "http://123.45.67.89:8000"
-const BOT_API_URL = "http://YOUR_PUBLIC_IP:8000";
+const BOT_API_URL = "https://xxxx-xxxx.loca.lt"; // <-- LocalTunnel URL hier
 
-// Vul hier je Discord ID in (of laat user inloggen via OAuth2)
-const DISCORD_ID = prompt("Enter your Discord ID"); 
+async function generateCode() {
+    const mcName = document.getElementById("mcname").value.trim();
+    if(!mcName) return alert("Enter your Minecraft username!");
 
-async function getLinkCode() {
-    try {
-        const response = await fetch(`${BOT_API_URL}/generate/${DISCORD_ID}`);
-        const data = await response.json();
+    const response = await fetch(`${BOT_API_URL}/generate_code?mc_username=${mcName}`);
+    const data = await response.json();
+
+    if(data.error) {
+        alert(data.error);
+    } else {
         document.getElementById("linkCode").innerText = data.code;
-        document.getElementById("commandCode").innerText = data.code;
-    } catch(err) {
-        console.error(err);
-        document.getElementById("linkCode").innerText = "ERROR";
-        document.getElementById("commandCode").innerText = "ERROR";
     }
 }
-
-getLinkCode();
 </script>
-
 </body>
 </html>
