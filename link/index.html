@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="../style.css">
 
 <style>
-/* Inline styles voor de linking box */
 .link-container {
   max-width: 700px;
   margin: 60px auto;
@@ -73,7 +72,6 @@
 <div class="link-container">
 
 <h1>Link Your Account</h1>
-
 <p>Generate your unique code and link your Minecraft account to our Discord.</p>
 
 <div class="code-box" id="linkCode">Generating...</div>
@@ -94,7 +92,7 @@ Join Discord
 </div>
 
 <div class="code-box">
-/link <span id="commandCode"></span>
+/link <span id="commandCode">...</span>
 </div>
 
 </div>
@@ -115,9 +113,17 @@ function generateCode() {
 }
 
 const code = generateCode();
-
 document.getElementById("linkCode").innerText = code;
 document.getElementById("commandCode").innerText = code;
+
+// ---- SEND TO BOT SERVER ----
+// De bot moet een simpele API hebben om de code te registreren
+// Voor nu sturen we het naar een endpoint: /register_link?code=XXXX&mc_name=XXXX
+fetch(`https://JOUW_BOT_ENDPOINT/register_link?code=${code}&mc_name=MINECRAFT_PLAYER`)
+.then(res => res.json())
+.then(console.log)
+.catch(err => console.error(err));
+
 </script>
 
 </body>
