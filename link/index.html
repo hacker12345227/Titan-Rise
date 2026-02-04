@@ -1,73 +1,113 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Titan Rise - Account Linking</title>
+<title>Link Your Account | Titan Rise</title>
+<link rel="stylesheet" href="/style.css">
+
 <style>
-body {
-    background: #0b0b0b;
-    color: white;
-    font-family: Segoe UI, Arial, sans-serif;
-    text-align: center;
-    margin: 0;
+.link-container {
+  max-width: 700px;
+  margin: 60px auto;
+  background: #111;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid #2a0000;
+  box-shadow: 0 0 20px rgba(155,0,0,0.15);
 }
-.container {
-    max-width: 600px;
-    margin: 80px auto;
-    background: #111;
-    padding: 30px;
-    border-radius: 12px;
-    border: 2px solid #3B0E5D;
-}
-h1 { color: #9b5cff; }
-.btn {
-    display: inline-block;
-    margin: 15px;
-    padding: 12px 20px;
-    background: #3B0E5D;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-}
+
 .code-box {
-    background:#0b0b0b;
-    padding:10px;
-    border-radius:8px;
-    border:1px solid #3B0E5D;
-    font-size:18px;
+  font-size: 28px;
+  letter-spacing: 3px;
+  background: #080000;
+  border: 1px solid #2a0000;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.steps {
+  text-align: left;
+  margin-top: 25px;
+}
+
+.step {
+  margin-bottom: 15px;
+}
+
+.discord-btn {
+  display: inline-block;
+  padding: 12px 18px;
+  background: #5865F2;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.discord-btn:hover {
+  background: #4752c4;
 }
 </style>
-<script>
-function getCode() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get("code") || "GEEN-CODE";
-}
-window.onload = function() {
-    document.getElementById("code").innerText = getCode();
-};
-</script>
 </head>
+
 <body>
 
 <div class="container">
-    <h1>🔗 Link your account</h1>
 
-    <p>Step 1 — Join our Discord:</p>
-    <a class="btn" href="https://discord.gg/rw2AQr3k" target="_blank">
-        JOIN DISCORD
-    </a>
+<div class="link-container">
 
-    <hr style="border-color:#3B0E5D; margin:20px 0;">
+<h1>Link Your Account</h1>
 
-    <p>Step 2 — In Discord, type:</p>
-    <div class="code-box">
-        /link <span id="code"></span>
-    </div>
+<p>Generate your unique code and link your Minecraft account to our Discord.</p>
 
-    <p>This will link your Minecraft account to Discord.</p>
+<div class="code-box" id="linkCode">Generating...</div>
+
+<a class="discord-btn" href="https://discord.gg/YOURSERVER" target="_blank">
+Join Discord
+</a>
+
+<div class="steps">
+<h2>How to link</h2>
+
+<div class="step">
+<strong>Step 1:</strong> Join our Discord server using the button above.
 </div>
+
+<div class="step">
+<strong>Step 2:</strong> In Discord, type this command in any channel:
+</div>
+
+<div class="code-box">
+/link <span id="commandCode"></span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+// ---- GENERATE UNIQUE CODE ----
+function generateCode() {
+  const letters = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  let code = "";
+  for (let i = 0; i < 6; i++) {
+    code += letters.charAt(Math.floor(Math.random() * letters.length));
+  }
+  return code;
+}
+
+const code = generateCode();
+
+document.getElementById("linkCode").innerText = code;
+document.getElementById("commandCode").innerText = code;
+</script>
 
 </body>
 </html>
+```
