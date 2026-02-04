@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Titan Rise - Link Account</title>
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="stylesheet" href="/style.css">
+<title>Link Your Account | Titan Rise</title>
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="stylesheet" href="../style.css">
 <style>
 .link-container {
   max-width: 700px;
@@ -27,8 +27,13 @@
   border-radius: 10px;
   font-weight: bold;
 }
-.steps { text-align: left; margin-top: 25px; }
-.step { margin-bottom: 15px; }
+.steps {
+  text-align: left;
+  margin-top: 25px;
+}
+.step {
+  margin-bottom: 15px;
+}
 .discord-btn {
   display: inline-block;
   padding: 12px 18px;
@@ -38,72 +43,72 @@
   border-radius: 10px;
   font-weight: bold;
 }
-.discord-btn:hover { background: #4752c4; }
+.discord-btn:hover {
+  background: #4752c4;
+}
 </style>
 </head>
 <body>
+
 <header>
-    <div class="logo"><img src="/assets/serverlogo.png" alt="Titan Rise"></div>
+    <div class="logo"><img src="../assets/serverlogo.png" alt="Titan Rise"></div>
 </header>
 
+<nav>
+    <a href="../">Home</a>
+    <a href="../ranks/">Ranks</a>
+    <a href="../keys/">Keys</a>
+    <a href="../coins/">Coins</a>
+    <a href="../staff/">Staff</a>
+</nav>
+
+<div class="container">
+
 <div class="link-container">
-<h1>Link Your Minecraft Account</h1>
-<p>Login with your Minecraft username to generate your Discord link code:</p>
 
-<input type="text" id="mcUsername" placeholder="Enter Minecraft Username">
-<button onclick="generateLinkCode()">Generate Code</button>
+<h1>Link Your Account</h1>
+<p>Generate your unique code and link your Minecraft account to our Discord.</p>
 
-<div class="code-box" id="linkCode" style="display:none;"></div>
+<div class="code-box" id="linkCode">Loading...</div>
 
-<a class="discord-btn" href="https://discord.gg/V2Vg3G8PzC" target="_blank">
-Join Discord
-</a>
+<a class="discord-btn" href="https://discord.gg/V2Vg3G8PzC" target="_blank">Join Discord</a>
 
 <div class="steps">
 <h2>How to link</h2>
-<div class="step">
-<strong>Step 1:</strong> Join our Discord server using the button above.
+
+<div class="step"><strong>Step 1:</strong> Join our Discord server using the button above.</div>
+<div class="step"><strong>Step 2:</strong> In Discord, type this command in any channel:</div>
+
+<div class="code-box">/link <span id="commandCode">LOADING</span></div>
 </div>
-<div class="step">
-<strong>Step 2:</strong> In Discord, type this command in any channel:
+
 </div>
-<div class="code-box" id="commandCode" style="display:none;">/link CODE</div>
-</div>
+
 </div>
 
 <script>
-// ---- GENERATE UNIQUE CODE ----
-function generateCode() {
-  const letters = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  let code = "";
-  for (let i = 0; i < 6; i++) {
-    code += letters.charAt(Math.floor(Math.random() * letters.length));
-  }
-  return code;
-}
+// ---- CONFIG ----
+// Vul hier je FastAPI server in, bv: "http://123.45.67.89:8000"
+const BOT_API_URL = "http://YOUR_PUBLIC_IP:8000";
 
-// ---- GENERATE LINK AND SEND TO BOT ----
-function generateLinkCode() {
-  const mcName = document.getElementById("mcUsername").value.trim();
-  if (!mcName) return alert("Enter your Minecraft username!");
+// Vul hier je Discord ID in (of laat user inloggen via OAuth2)
+const DISCORD_ID = prompt("Enter your Discord ID"); 
 
-  const code = generateCode();
-
-  // Update page
-  document.getElementById("linkCode").innerText = code;
-  document.getElementById("linkCode").style.display = "block";
-  document.getElementById("commandCode").innerText = "/link " + code;
-  document.getElementById("commandCode").style.display = "block";
-
-  // Send to bot via FastAPI
-  fetch(`https://YOUR_BOT_IP_OR_DOMAIN:8000/register_link?code=${code}&mc_name=${mcName}`)
-  .then(res => res.json())
-  .then(res => {
-    if(res.status === "ok") {
-      console.log(`Registered code ${code} for ${mcName}`);
+async function getLinkCode() {
+    try {
+        const response = await fetch(`${BOT_API_URL}/generate/${DISCORD_ID}`);
+        const data = await response.json();
+        document.getElementById("linkCode").innerText = data.code;
+        document.getElementById("commandCode").innerText = data.code;
+    } catch(err) {
+        console.error(err);
+        document.getElementById("linkCode").innerText = "ERROR";
+        document.getElementById("commandCode").innerText = "ERROR";
     }
-  }).catch(err => console.error(err));
 }
+
+getLinkCode();
 </script>
+
 </body>
 </html>
