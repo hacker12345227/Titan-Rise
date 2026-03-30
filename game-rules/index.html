@@ -1,111 +1,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TitanRise - Game Rules</title>
+  <title>TitanRise - Serverregels</title>
   <link rel="stylesheet" href="/styles.css">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="shortcut icon" href="/favicon.png">
+
   <style>
+    @import url('https://fonts.cdnfonts.com/css/minecraft-4');
+
     body {
-      background-color: #1a0d0d;
-      color: #e0e0e0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
+      background:#0a0a0a;
+      color:#e0e0e0;
+      font-family:'Minecraft', Arial, sans-serif;
+      margin:0;
+      padding:0;
     }
+
     header {
-      background: #0d0d0d;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid #b30000;
+      background:linear-gradient(180deg,#111,#0b0b0b);
+      padding:25px;
+      text-align:center;
+      border-bottom:3px solid #bc9c00;
+      box-shadow:0 4px 20px rgba(0,0,0,0.7);
     }
+
     header h1 {
-      color: #ff3333;
-      font-size: 2.5rem;
-      letter-spacing: 2px;
+      color:#bc9c00;
+      font-size:2.3rem;
+      text-shadow:0 0 15px rgba(188,156,0,0.6);
+      letter-spacing:2px;
     }
+
     main {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px;
+      max-width:900px;
+      margin:40px auto;
+      padding:0 20px;
     }
+
     section {
-      margin-bottom: 25px;
-      padding: 15px;
-      background-color: #0d0d0d;
-      border-left: 5px solid #ff3333;
-      border-radius: 6px;
-      transition: transform 0.2s, background 0.2s;
+      margin-bottom:25px;
+      padding:20px;
+      background:linear-gradient(180deg,#1a1a1a,#111);
+      border-left:5px solid #bc9c00;
+      border-radius:12px;
+      transition:0.3s;
+      box-shadow:0 0 12px rgba(188,156,0,0.12);
     }
+
     section:hover {
-      transform: scale(1.02);
-      background-color: #330d0d;
+      transform:translateY(-4px);
+      box-shadow:0 0 20px rgba(188,156,0,0.25);
+      background:linear-gradient(180deg,#1d1a00,#111);
     }
+
     h2 {
-      color: #ff3333;
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+      color:#bc9c00;
+      font-size:1.3rem;
+      margin-bottom:12px;
+      text-shadow:0 0 8px rgba(188,156,0,0.4);
     }
+
     p {
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size:0.95rem;
+      line-height:1.7;
+      color:#d6d6d6;
+    }
+
+    @media(max-width:768px) {
+      header h1 {
+        font-size:1.5rem;
+      }
+
+      section {
+        padding:15px;
+      }
+
+      h2 {
+        font-size:1rem;
+      }
+
+      p {
+        font-size:0.85rem;
+      }
     }
   </style>
 </head>
+
 <body>
+
   <header>
-    <h1>TitanRise - Game Rules</h1>
+    <h1>TitanRise - Serverregels</h1>
   </header>
+
   <main>
+
     <section>
-      <h2>1. Respect Others</h2>
-      <p>No harassment, bullying, or offensive language. Treat staff and players with respect.</p>
+      <h2>1. Respecteer anderen</h2>
+      <p>Geen intimidatie, pesten of beledigend taalgebruik. Behandel staff en spelers met respect.</p>
     </section>
 
     <section>
-      <h2>2. Chat Conduct</h2>
-      <p>No spamming or inappropriate messages. Keep chat friendly and appropriate for all ages.</p>
+      <h2>2. Chatgedrag</h2>
+      <p>Geen spam of ongepaste berichten. Houd de chat vriendelijk en geschikt voor alle leeftijden.</p>
     </section>
 
     <section>
-      <h2>3. PvP Rules</h2>
-      <p>PvP is allowed everywhere unless marked otherwise. No PvP cheats are allowed.</p>
+      <h2>3. PvP Regels</h2>
+      <p>PvP is overal toegestaan tenzij anders aangegeven. PvP cheats zijn niet toegestaan.</p>
     </section>
 
     <section>
-      <h2>4. Cheating & Exploits</h2>
-      <p>No hacks, mods, or scripts giving unfair advantages (X-ray, fly, speed, etc.). Exploiting server bugs is forbidden; report them to staff.</p>
+      <h2>4. Cheaten & Exploits</h2>
+      <p>Geen hacks, mods of scripts die oneerlijke voordelen geven (zoals X-ray, fly, speed, enz.). Bugs misbruiken is verboden; meld deze aan staff.</p>
     </section>
 
     <section>
-      <h2>5. Griefing & Building</h2>
-      <p>Griefing is allowed. Destroying, raiding, and building over other players is part of the server experience.</p>
+      <h2>5. Griefen & Bouwen</h2>
+      <p>Griefen is toegestaan. Slopen, raiden en over andere spelers heen bouwen hoort bij de serverervaring.</p>
     </section>
 
     <section>
-      <h2>6. Economy & Trading</h2>
-      <p>Scamming is allowed. Trade and economy interactions are completely free-form.</p>
+      <h2>6. Economie & Handelen</h2>
+      <p>Scammen is toegestaan. Handel en economie zijn volledig vrij.</p>
     </section>
 
     <section>
-      <h2>7. Item & Resource Use</h2>
-      <p>Stealing items from other players is allowed. Protect your valuables carefully!</p>
+      <h2>7. Items & Resources</h2>
+      <p>Items stelen van andere spelers is toegestaan. Bescherm je waardevolle spullen goed!</p>
     </section>
 
     <section>
       <h2>8. Commands & Admin Tools</h2>
-      <p>Do not abuse server commands or admin tools. Only staff may use moderation commands.</p>
+      <p>Misbruik geen servercommands of admin-tools. Alleen staff mag moderatiecommands gebruiken.</p>
     </section>
 
     <section>
-      <h2>9. Reporting Issues</h2>
-      <p>Report hacks, exploits, or other rule-breaking (like cheating) to staff. Do not take matters into your own hands.</p>
+      <h2>9. Problemen melden</h2>
+      <p>Meld hacks, exploits of andere overtredingen aan staff. Neem geen eigen maatregelen.</p>
     </section>
 
     <section>
-      <h2>10. Consequences</h2>
-      <p>Breaking the server rules (like cheating) may result in warnings, kicks, or bans. Normal gameplay actions like griefing or scamming do not count as punishable offenses.</p>
+      <h2>10. Gevolgen</h2>
+      <p>Overtredingen zoals cheaten kunnen leiden tot waarschuwingen, kicks of bans. Normale gameplay zoals griefen of scammen is niet strafbaar.</p>
     </section>
+
   </main>
+
 </body>
-</html>
