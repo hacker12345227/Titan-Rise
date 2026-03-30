@@ -28,3 +28,12 @@ function toggleRank(section){
 }
 
 window.onload = showUserInfo;
+
+
+// Highlight active nav link
+const links = document.querySelectorAll('.nav-link');
+links.forEach(link => {
+    if(link.href === window.location.href){
+        link.classList.add('active');
+    }
+});
