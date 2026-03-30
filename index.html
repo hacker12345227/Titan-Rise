@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Titan Rise - PvP Minecraft Server</title>
+<title>Titan Rise - Lifesteal SMP</title>
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -11,20 +11,28 @@
 
 <!-- ===== HEADER ===== -->
 <header>
-    <div class="logo"><img src="/assets/serverlogo.png" alt="Titan Rise"></div>
+    <div class="logo">
+        <img src="/assets/serverlogo.png" alt="Titan Rise">
+    </div>
 
     <nav class="nav-center">
+        <a href="/" class="nav-link active">Home</a>
+        <a href="/info/" class="nav-link">Info</a>
+        <a href="/regels/" class="nav-link">Regels</a>
+        <a href="/commands/" class="nav-link">Commands</a>
         <a href="/staff/" class="nav-link">Staff</a>
+        <a href="/support/" class="nav-link">Support</a>
     </nav>
 
     <div id="user-login">
-        <input type="text" id="username" placeholder="Enter Username">
-        <button class="login-btn" onclick="login()">Login</button>
+        <input type="text" id="username" placeholder="Voer gebruikersnaam in">
+        <button class="login-btn" onclick="login()">Inloggen</button>
     </div>
+
     <div id="user-info" style="display:none;">
-        <img id="playerhead" src="" alt="player head">
+        <img id="playerhead" src="" alt="speler hoofd">
         <span id="playername"></span>
-        <img id="logout-btn" src="/assets/logout.png" alt="Logout" title="Logout" onclick="logout()">
+        <img id="logout-btn" src="/assets/logout.png" alt="Uitloggen" title="Uitloggen" onclick="logout()">
     </div>
 </header>
 
@@ -32,56 +40,62 @@
 <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <h1>Welcome to <span class="highlight">Titan Rise</span></h1>
-        <p>Fight. Dominate. Rise. The ultimate PvP Minecraft experience awaits!</p>
+        <h1>Welkom bij <span class="highlight">Titan Rise</span></h1>
+        <p>Vecht. Overleef. Groei. De ultieme Lifesteal SMP ervaring wacht op jou!</p>
     </div>
 </section>
 
-<!-- ===== INFO / FEATURES ===== -->
+<!-- ===== SERVER INFO ===== -->
 <section class="features">
     <div class="feature-card">
-        <img src="/assets/pvp.png" alt="PvP Arenas">
-        <h3>PvP Arenas</h3>
-        <p>Engage in fast-paced battles across multiple arenas designed for ultimate combat thrill.</p>
-    </div>
-    <div class="feature-card">
-        <img src="/assets/ranks/immortal.png" alt="Ranks">
-        <h3>Ranks & Perks</h3>
-        <p>Climb the ranks, gain powerful perks, and show off your status in battle.</p>
-    </div>
-    <div class="feature-card">
-        <img src="/assets/coins/coin.png" alt="Coins">
-        <h3>Coins & Economy</h3>
-        <p>Earn coins through combat and rewards to upgrade gear and improve your PvP performance.</p>
-    </div>
-    <div class="feature-card">
-        <img src="/assets/keys/abyss.png" alt="Keys & Crates">
-        <h3>Keys & Crates</h3>
-        <p>Open crates with keys to unlock exclusive items, weapons, and armor.</p>
+        <h3>Wat is Titan Rise?</h3>
+        <p>
+            Titan Rise is een intense Lifesteal SMP waar elke kill telt. 
+            Wanneer je een speler verslaat, steel je een hart en word je sterker.
+            Maar pas op — als jij sterft, verlies je er zelf één.
+        </p>
+        <p>
+            Speel solo of vorm allianties, bouw je basis en domineer de server.
+            Vertrouwen is zeldzaam... overleven is alles.
+        </p>
     </div>
 </section>
 
 <!-- ===== COMMUNITY ===== -->
 <section class="community">
-    <h2>Our Community</h2>
-    <p>Join hundreds of players in daily PvP events, tournaments, and epic battles. Compete, socialize, and rise!</p>
+    <h2>Onze Community</h2>
+    <p>
+        Speel samen met andere spelers in spannende gevechten, events en avonturen. 
+        Werk samen of neem het tegen elkaar op en bewijs dat jij de sterkste bent.
+    </p>
+
     <div class="community-grid">
         <div class="community-card">
             <img src="/assets/event1.png" alt="Event">
-            <h3>Weekly Tournaments</h3>
+            <h3>Wekelijkse Events</h3>
         </div>
         <div class="community-card">
             <img src="/assets/event2.png" alt="Event">
-            <h3>Special PvP Events</h3>
+            <h3>Intense PvP</h3>
         </div>
         <div class="community-card">
             <img src="/assets/event3.png" alt="Event">
-            <h3>Ranked Battles</h3>
+            <h3>Competitieve Gameplay</h3>
         </div>
     </div>
 </section>
 
 <script src="script.js"></script>
+
+<script>
+// ===== ACTIEVE PAGINA HIGHLIGHT =====
+const links = document.querySelectorAll('.nav-link');
+links.forEach(link => {
+    if(link.href === window.location.href) {
+        link.classList.add('active');
+    }
+});
+</script>
 
 </body>
 </html>
