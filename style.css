@@ -2,34 +2,74 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'Arial', sans-serif; background:#0a0a0a; color:#fff; }
 
-/* ===== Header ===== */
+/* ===== HEADER ===== */
 header {
     display:flex; justify-content:space-between; align-items:center;
-    padding:15px 30px; background:#111; border-bottom:2px solid #ff1a1a; position:sticky; top:0; z-index:1000;
+    padding:15px 40px;
+    background:linear-gradient(180deg,#111,#0d0d0d);
+    border-bottom:3px solid #ff1a1a;
+    position:sticky; top:0; z-index:1000;
+    box-shadow:0 4px 15px rgba(0,0,0,0.5);
+    transition:0.3s;
 }
-.logo img { width:160px; }
-nav { display:flex; gap:25px; }
-nav a { color:#ccc; text-decoration:none; font-weight:500; position:relative; transition:0.3s; }
-nav a::after { content:""; position:absolute; width:0%; height:2px; background:#ff1a1a; left:0; bottom:-5px; transition:0.3s; }
-nav a:hover { color:#fff; } nav a:hover::after { width:100%; }
-#user-login input { padding:6px 12px; border-radius:6px; border:none; background:#222; color:#fff; }
-#user-login button { padding:6px 14px; background:linear-gradient(45deg,#ff1a1a,#990000); border:none; color:#fff; border-radius:6px; cursor:pointer; transition:0.3s; }
-#user-login button:hover { transform:scale(1.05); }
-#user-info { display:flex; align-items:center; gap:10px; }
-#playerhead { width:40px; height:40px; border-radius:50%; border:2px solid #ff1a1a; }
-#logout-btn { width:24px; height:24px; cursor:pointer; transition:0.2s; }
-#logout-btn:hover { transform:scale(1.2); }
+header:hover { background:linear-gradient(180deg,#111,#1a0a0a); }
+.logo img { width:170px; transition:0.3s; }
+.logo img:hover { transform:scale(1.05); }
 
-/* ===== Hero Section ===== */
+/* ===== Navigation ===== */
+nav { display:flex; gap:30px; }
+.nav-link {
+    color:#ccc; text-decoration:none; font-weight:600; position:relative;
+    padding:5px 10px; transition:0.3s;
+}
+.nav-link::after {
+    content:""; position:absolute; width:0%; height:3px; background:#ff1a1a;
+    left:0; bottom:-5px; border-radius:2px; transition:0.3s;
+}
+.nav-link:hover { color:#fff; text-shadow:0 0 10px #ff1a1a; }
+.nav-link:hover::after { width:100%; }
+
+/* Active Page */
+.nav-link.active { color:#ff1a1a; text-shadow:0 0 15px #ff1a1a; }
+.nav-link.active::after { width:100%; }
+
+/* ===== LOGIN BUTTONS ===== */
+#user-login input {
+    padding:7px 14px; border-radius:8px; border:none; background:#222; color:#fff; outline:none;
+    transition:0.3s;
+}
+#user-login input:focus { box-shadow:0 0 10px #ff1a1a; }
+.login-btn {
+    padding:7px 16px; margin-left:8px;
+    background:linear-gradient(45deg,#ff1a1a,#990000);
+    border:none; color:#fff; border-radius:8px; cursor:pointer;
+    font-weight:600; transition:0.3s;
+    box-shadow:0 0 10px rgba(255,0,0,0.6);
+}
+.login-btn:hover { transform:scale(1.05); box-shadow:0 0 25px rgba(255,0,0,0.9); }
+
+/* ===== USER INFO ===== */
+#user-info { display:flex; align-items:center; gap:12px; }
+#playerhead { width:42px; height:42px; border-radius:50%; border:2px solid #ff1a1a; transition:0.3s; }
+#playerhead:hover { transform:scale(1.1); box-shadow:0 0 15px #ff1a1a; }
+#playername { font-weight:600; color:#ff1a1a; text-shadow:0 0 10px #ff1a1a; }
+#logout-btn { width:26px; height:26px; cursor:pointer; transition:0.3s; }
+#logout-btn:hover { transform:scale(1.2); filter:drop-shadow(0 0 10px #ff1a1a); }
+
+/* ===== HERO SECTION ===== */
 .hero { position:relative; height:80vh; display:flex; align-items:center; justify-content:center; text-align:center; background:url('/assets/hero-bg-pvp.jpg') center/cover no-repeat; }
 .hero-overlay { position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.75); }
 .hero-content { position:relative; color:#fff; }
 .hero-content h1 { font-size:4em; margin-bottom:20px; color:#ff1a1a; text-shadow:0 0 15px #ff1a1a; }
 .hero-content p { font-size:18px; margin-bottom:30px; color:#ccc; }
-.cta-btn { padding:12px 30px; background:linear-gradient(45deg,#ff1a1a,#990000); border-radius:12px; color:#fff; text-decoration:none; box-shadow:0 0 15px rgba(255,0,0,0.4); transition:0.3s; }
+.cta-btn {
+    padding:12px 30px; background:linear-gradient(45deg,#ff1a1a,#990000);
+    border-radius:12px; color:#fff; text-decoration:none;
+    box-shadow:0 0 15px rgba(255,0,0,0.4); transition:0.3s;
+}
 .cta-btn:hover { transform:scale(1.08); box-shadow:0 0 25px rgba(255,0,0,0.8); }
 
-/* ===== Features Section ===== */
+/* ===== FEATURES ===== */
 .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; padding:80px 50px; }
 .feature-card { background:#1a1a1a; border:2px solid #ff1a1a; border-radius:15px; padding:30px; text-align:center; transition:0.3s; box-shadow:0 0 10px rgba(255,0,0,0.3); }
 .feature-card img { width:100px; height:100px; margin-bottom:20px; }
@@ -38,7 +78,7 @@ nav a:hover { color:#fff; } nav a:hover::after { width:100%; }
 .feature-card .btn { display:inline-block; padding:10px 25px; background:#ff1a1a; color:#fff; border-radius:8px; text-decoration:none; transition:0.3s; }
 .feature-card .btn:hover { background:#990000; transform:scale(1.05); }
 
-/* ===== Community Section ===== */
+/* ===== COMMUNITY ===== */
 .community { padding:80px 50px; text-align:center; }
 .community h2 { font-size:2.5em; margin-bottom:20px; color:#ff1a1a; }
 .community p { color:#ccc; margin-bottom:50px; }
