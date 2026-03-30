@@ -14,10 +14,6 @@
     <div class="logo"><img src="/assets/serverlogo.png" alt="Titan Rise"></div>
 
     <nav class="nav-center">
-        <a href="/" class="nav-link active">Home</a>
-        <a href="/ranks/" class="nav-link">Ranks</a>
-        <a href="/keys/" class="nav-link">Keys</a>
-        <a href="/coins/" class="nav-link">Coins</a>
         <a href="/staff/" class="nav-link">Staff</a>
     </nav>
 
@@ -38,39 +34,34 @@
     <div class="hero-content">
         <h1>Welcome to <span class="highlight">Titan Rise</span></h1>
         <p>Fight. Dominate. Rise. The ultimate PvP Minecraft experience awaits!</p>
-        <a href="/ranks/" class="cta-btn">Join the Battle</a>
     </div>
 </section>
 
-<!-- ===== FEATURES ===== -->
+<!-- ===== INFO / FEATURES ===== -->
 <section class="features">
     <div class="feature-card">
         <img src="/assets/pvp.png" alt="PvP Arenas">
         <h3>PvP Arenas</h3>
         <p>Engage in fast-paced battles across multiple arenas designed for ultimate combat thrill.</p>
-        <a href="/arena/" class="btn">Enter Arenas</a>
     </div>
     <div class="feature-card">
         <img src="/assets/ranks/immortal.png" alt="Ranks">
         <h3>Ranks & Perks</h3>
         <p>Climb the ranks, gain powerful perks, and show off your status in battle.</p>
-        <a href="/ranks/" class="btn">View Ranks</a>
     </div>
     <div class="feature-card">
         <img src="/assets/coins/coin.png" alt="Coins">
-        <h3>Coins & Shop</h3>
-        <p>Earn coins through combat and rewards to upgrade gear, buy kits and dominate PvP.</p>
-        <a href="/coins/" class="btn">Shop Coins</a>
+        <h3>Coins & Economy</h3>
+        <p>Earn coins through combat and rewards to upgrade gear and improve your PvP performance.</p>
     </div>
     <div class="feature-card">
         <img src="/assets/keys/abyss.png" alt="Keys & Crates">
         <h3>Keys & Crates</h3>
-        <p>Open crates with keys to unlock exclusive items, weapons, and armor for PvP supremacy.</p>
-        <a href="/keys/" class="btn">Get Keys</a>
+        <p>Open crates with keys to unlock exclusive items, weapons, and armor.</p>
     </div>
 </section>
 
-<!-- ===== COMMUNITY / EVENTS ===== -->
+<!-- ===== COMMUNITY ===== -->
 <section class="community">
     <h2>Our Community</h2>
     <p>Join hundreds of players in daily PvP events, tournaments, and epic battles. Compete, socialize, and rise!</p>
@@ -91,14 +82,6 @@
 </section>
 
 <script src="script.js"></script>
-<script>
-// ===== DYNAMIC ACTIVE PAGE =====
-const links = document.querySelectorAll('.nav-link');
-links.forEach(link => {
-    if(link.href === window.location.href) {
-        link.classList.add('active');
-    }
-});
-</script>
+
 </body>
 </html>
