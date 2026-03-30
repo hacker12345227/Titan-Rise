@@ -1,16 +1,23 @@
-<!-- ================= INDEX.HTML ================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Titan Rise</title>
+<title>Titan Rise - Minecraft Server</title>
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- Header -->
 <header>
     <div class="logo"><img src="/assets/serverlogo.png" alt="Titan Rise"></div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/ranks/">Ranks</a>
+        <a href="/keys/">Keys</a>
+        <a href="/coins/">Coins</a>
+        <a href="/staff/">Staff</a>
+    </nav>
     <div id="user-login">
         <input type="text" id="username" placeholder="Enter Username">
         <button onclick="login()">Login</button>
@@ -18,23 +25,41 @@
     <div id="user-info" style="display:none;">
         <img id="playerhead" src="" alt="player head">
         <span id="playername"></span>
-        <img id="logout-btn" src="/assets/logout.png" alt="Logout" title="Logout" onclick="logout()" style="cursor:pointer; width:24px; height:24px; margin-left:10px;">
+        <img id="logout-btn" src="/assets/logout.png" alt="Logout" title="Logout" onclick="logout()">
     </div>
 </header>
 
-<nav>
-    <a href="/">Home</a>
-    <a href="/ranks/">Ranks</a>
-    <a href="/keys/">Keys</a>
-    <a href="/coins/">Coins</a>
-    <a href="/staff/">Staff</a>
-</nav>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Welcome to <span class="highlight">Titan Rise</span></h1>
+        <p>Experience the ultimate Minecraft adventure. Join now and rise to glory!</p>
+        <a href="/ranks/" class="cta-btn">View Ranks</a>
+    </div>
+</section>
 
-<main class="landing">
-    <h1>Welcome to <span class="highlight">Titan Rise</span></h1>
-    <p>The ultimate Minecraft server experience. Join now and rise to glory!</p>
-    <a href="/ranks/" class="cta-btn">View Ranks</a>
-</main>
+<!-- Features Section -->
+<section class="features">
+    <div class="feature-card">
+        <img src="/assets/feature1.png" alt="Ranks">
+        <h3>Ranks</h3>
+        <p>Level up and unlock exclusive powers with our unique rank system.</p>
+        <a href="/ranks/" class="btn">Explore</a>
+    </div>
+    <div class="feature-card">
+        <img src="/assets/feature2.png" alt="Coins">
+        <h3>Coins</h3>
+        <p>Earn coins to upgrade your gear and dominate the game world.</p>
+        <a href="/coins/" class="btn">Shop Coins</a>
+    </div>
+    <div class="feature-card">
+        <img src="/assets/feature3.png" alt="Keys">
+        <h3>Keys</h3>
+        <p>Open crates and get amazing rewards with our key system.</p>
+        <a href="/keys/" class="btn">Get Keys</a>
+    </div>
+</section>
 
 <script src="script.js"></script>
 </body>
