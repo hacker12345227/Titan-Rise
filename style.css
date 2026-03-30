@@ -468,3 +468,63 @@ nav.nav-center {
     text-decoration:none;
     box-shadow:0 0 12px rgba(188,156,0,0.4);
 }
+
+/* ===== STAFF PAGINA ===== */
+main {
+    padding:60px 40px;
+    text-align:center;
+}
+
+main h1 {
+    color:#bc9c00;
+    margin-bottom:40px;
+    font-size:2.5em;
+    text-shadow:0 0 12px rgba(188,156,0,0.6);
+}
+
+/* GRID */
+.staff-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    max-width:1000px;
+    margin:0 auto;
+}
+
+/* CARD */
+.staff-card {
+    background:linear-gradient(180deg,#1a1a1a,#111);
+    border:2px solid #bc9c00;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    transition:0.3s;
+    box-shadow:0 0 12px rgba(188,156,0,0.15);
+}
+
+.staff-card:hover {
+    transform:translateY(-6px) scale(1.03);
+    box-shadow:0 0 25px rgba(188,156,0,0.4);
+}
+
+/* HEAD */
+.staff-card img {
+    width:80px;
+    height:80px;
+    border-radius:12px;
+    margin-bottom:15px;
+    border:2px solid #bc9c00;
+}
+
+/* NAAM */
+.staff-card h3 {
+    color:#fff;
+    margin-bottom:5px;
+}
+
+/* ROL */
+.staff-card p {
+    color:#bc9c00;
+    font-size:0.9em;
+    text-shadow:0 0 8px rgba(188,156,0,0.6);
+}
