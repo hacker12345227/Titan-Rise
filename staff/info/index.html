@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Info - Titan Rise</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="logo">
+        <img src="/assets/serverlogo.png" alt="Titan Rise">
+    </div>
+
+    <nav class="nav-center">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/info/" class="nav-link active">Info</a>
+        <a href="/regels/" class="nav-link">Regels</a>
+        <a href="/commands/" class="nav-link">Commands</a>
+        <a href="/staff/" class="nav-link">Staff</a>
+        <a href="/support/" class="nav-link">Support</a>
+    </nav>
+
+    <div id="user-login">
+        <input type="text" id="username" placeholder="Voer gebruikersnaam in">
+        <button class="login-btn" onclick="login()">Inloggen</button>
+    </div>
+
+    <div id="user-info" style="display:none;">
+        <img id="playerhead" src="" alt="speler hoofd">
+        <span id="playername"></span>
+        <img id="logout-btn" src="/assets/logout.png" alt="Uitloggen" title="Uitloggen" onclick="logout()">
+    </div>
+</header>
+
+<!-- ===== INFO CONTENT ===== -->
+<main>
+    <h1>Server Info</h1>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>Wat is Lifesteal SMP?</h3>
+            <p>
+                Lifesteal SMP is een gamemode waarbij je harten kunt stelen van andere spelers door ze te verslaan. 
+                Als je iemand verslaat, krijg je een extra hart. Maar als je sterft, verlies je er één.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Over Titan Rise</h3>
+            <p>
+                Titan Rise is een competitieve Lifesteal SMP waar PvP centraal staat. 
+                Bouw je basis, vorm allianties of ga solo en probeer de sterkste speler op de server te worden.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Gameplay</h3>
+            <p>
+                De server draait volledig om overleven, vechten en strategie. 
+                Vertrouwen is zeldzaam — elke speler kan een vijand worden.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Doel</h3>
+            <p>
+                Het doel is simpel: word de sterkste speler door harten te verzamelen en anderen te domineren. 
+                Blijf alive, want elke dood kost je progressie.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<script src="/script.js"></script>
+
+</body>
+</html>
