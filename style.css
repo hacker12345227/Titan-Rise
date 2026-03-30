@@ -1,8 +1,14 @@
-/* ===== RESET & BASE ===== */
-* { margin:0; padding:0; box-sizing:border-box; }
+/* ===== MINECRAFT FONT ===== */
+@import url('https://fonts.cdnfonts.com/css/minecraft-4');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body {
-    font-family:'Arial', sans-serif;
+    font-family:'Minecraft', Arial, sans-serif;
     background:#0a0a0a;
     color:#fff;
 }
@@ -140,20 +146,6 @@ nav.nav-center {
     text-shadow:0 0 18px rgba(188,156,0,0.7);
 }
 
-.cta-btn {
-    padding:12px 30px;
-    background:linear-gradient(45deg,#bc9c00,#7a6500);
-    border-radius:12px;
-    color:#fff;
-    text-decoration:none;
-    box-shadow:0 0 15px rgba(188,156,0,0.4);
-}
-
-.cta-btn:hover {
-    transform:scale(1.08);
-    box-shadow:0 0 25px rgba(188,156,0,0.8);
-}
-
 /* ===== FEATURES ===== */
 .features {
     display:grid;
@@ -177,10 +169,10 @@ nav.nav-center {
     box-shadow:0 0 25px rgba(188,156,0,0.35);
 }
 
-/* ✅ afbeeldingen automatisch */
+/* ✅ originele scaling terug */
 .feature-card img {
-    max-width:100%;
-    height:auto;
+    width:100px;
+    height:100px;
     margin-bottom:20px;
 }
 
@@ -197,10 +189,6 @@ nav.nav-center {
     text-decoration:none;
 }
 
-.feature-card .btn:hover {
-    box-shadow:0 0 20px rgba(188,156,0,0.5);
-}
-
 /* ===== COMMUNITY ===== */
 .community-card {
     background:#141414;
@@ -210,8 +198,8 @@ nav.nav-center {
 }
 
 .community-card img {
-    max-width:100%;
-    height:auto;
+    width:100px;
+    height:100px;
     margin-bottom:15px;
 }
 
@@ -229,10 +217,11 @@ nav.nav-center {
     box-shadow:0 0 12px rgba(188,156,0,0.15);
 }
 
-/* ✅ automatische afbeelding grootte */
+/* ✅ originele scaling */
 .card.landscape img {
-    max-width:100%;
-    height:auto;
+    width:120px;
+    height:120px;
+    object-fit:cover;
     border-radius:12px;
     margin-bottom:15px;
 }
@@ -249,8 +238,4 @@ nav.nav-center {
     color:#fff;
     text-decoration:none;
     box-shadow:0 0 12px rgba(188,156,0,0.4);
-}
-
-.buy-btn:hover {
-    box-shadow:0 0 24px rgba(188,156,0,0.8);
 }
