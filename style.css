@@ -1,4 +1,8 @@
-/* ===== Header ===== */
+/* ===== Reset & Base ===== */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Arial', sans-serif; background:#0a0a0a; color:#fff; }
+
+/* ===== HEADER ===== */
 header {
     display:flex;
     justify-content:space-between;
@@ -12,6 +16,8 @@ header {
     box-shadow:0 4px 15px rgba(0,0,0,0.5);
 }
 
+header:hover { background:linear-gradient(180deg,#111,#1a0a0a); }
+
 /* Logo */
 .logo img {
     width:170px;
@@ -23,7 +29,7 @@ header {
 nav.nav-center {
     display:flex;
     justify-content:center;
-    flex:1; /* Zorgt dat de nav in het midden komt */
+    flex:1;
     gap:25px;
 }
 .nav-link {
@@ -33,7 +39,7 @@ nav.nav-center {
     padding:8px 20px;
     border-radius:10px;
     transition:0.3s;
-    background:#1a1a1a; /* Stoere knop achtergrond */
+    background:#1a1a1a;
     box-shadow:0 0 5px rgba(255,0,0,0.4);
 }
 .nav-link:hover {
@@ -51,7 +57,7 @@ nav.nav-center {
     background:#220000;
 }
 
-/* ===== Login/User Section ===== */
+/* ===== LOGIN / USER ===== */
 #user-login input {
     padding:7px 14px;
     border-radius:8px;
@@ -62,6 +68,7 @@ nav.nav-center {
     transition:0.3s;
 }
 #user-login input:focus { box-shadow:0 0 10px #ff1a1a; }
+
 .login-btn {
     padding:7px 16px;
     margin-left:8px;
@@ -83,12 +90,96 @@ nav.nav-center {
 #logout-btn { width:26px; height:26px; cursor:pointer; transition:0.3s; }
 #logout-btn:hover { transform:scale(1.2); filter:drop-shadow(0 0 10px #ff1a1a); }
 
-/* ===== Responsive ===== */
-@media(max-width:1024px) {
-    nav.nav-center { gap:15px; }
+/* ===== HERO SECTION ===== */
+.hero {
+    position:relative;
+    height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:url('/assets/hero-bg-pvp.jpg') center/cover no-repeat;
 }
+.hero-overlay { position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.75); }
+.hero-content { position:relative; color:#fff; }
+.hero-content h1 {
+    font-size:4em;
+    margin-bottom:20px;
+    color:#ff1a1a;
+    text-shadow:0 0 15px #ff1a1a;
+}
+.hero-content p { font-size:18px; margin-bottom:30px; color:#ccc; }
+.cta-btn {
+    padding:12px 30px;
+    background:linear-gradient(45deg,#ff1a1a,#990000);
+    border-radius:12px;
+    color:#fff;
+    text-decoration:none;
+    box-shadow:0 0 15px rgba(255,0,0,0.4);
+    transition:0.3s;
+}
+.cta-btn:hover { transform:scale(1.08); box-shadow:0 0 25px rgba(255,0,0,0.8); }
+
+/* ===== FEATURES SECTION ===== */
+.features {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:80px 50px;
+}
+.feature-card {
+    background:#1a1a1a;
+    border:2px solid #ff1a1a;
+    border-radius:15px;
+    padding:30px;
+    text-align:center;
+    transition:0.3s;
+    box-shadow:0 0 10px rgba(255,0,0,0.3);
+}
+.feature-card img { width:100px; height:100px; margin-bottom:20px; }
+.feature-card h3 { margin-bottom:10px; color:#ff1a1a; }
+.feature-card p { color:#ccc; margin-bottom:15px; }
+.feature-card .btn {
+    display:inline-block;
+    padding:10px 25px;
+    background:#ff1a1a;
+    color:#fff;
+    border-radius:8px;
+    text-decoration:none;
+    transition:0.3s;
+}
+.feature-card .btn:hover { background:#990000; transform:scale(1.05); }
+
+/* ===== COMMUNITY SECTION ===== */
+.community {
+    padding:80px 50px;
+    text-align:center;
+}
+.community h2 { font-size:2.5em; margin-bottom:20px; color:#ff1a1a; }
+.community p { color:#ccc; margin-bottom:50px; }
+.community-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+.community-card {
+    background:#1a1a1a;
+    padding:20px;
+    border:2px solid #ff1a1a;
+    border-radius:12px;
+    transition:0.3s;
+}
+.community-card img { width:100px; height:100px; margin-bottom:15px; }
+.community-card h3 { color:#ff1a1a; }
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px) { nav.nav-center { gap:15px; } }
 @media(max-width:768px) {
     header { flex-direction:column; gap:10px; padding:15px 20px; }
     nav.nav-center { order:2; }
     #user-login, #user-info { order:3; }
+}
+@media(max-width:480px) {
+    .hero-content h1 { font-size:2.2em; }
+    .features, .community { padding:50px 20px; }
 }
