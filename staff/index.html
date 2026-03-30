@@ -9,15 +9,28 @@
 </head>
 <body>
 <header>
-    <div class="logo"><img src="/assets/serverlogo.png" alt="Titan Rise"></div>
-    <div id="user-login">
-        <input type="text" id="username" placeholder="Enter Username">
-        <button onclick="login()">Login</button>
+    <div class="logo">
+        <img src="/assets/serverlogo.png" alt="Titan Rise">
     </div>
+
+    <nav class="nav-center">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/info/" class="nav-link">Info</a>
+        <a href="/regels/" class="nav-link">Regels</a>
+        <a href="/commands/" class="nav-link">Commands</a>
+        <a href="/staff/" class="nav-link active">Staff</a>
+        <a href="/support/" class="nav-link">Support</a>
+    </nav>
+
+    <div id="user-login">
+        <input type="text" id="username" placeholder="Voer gebruikersnaam in">
+        <button class="login-btn" onclick="login()">Inloggen</button>
+    </div>
+
     <div id="user-info" style="display:none;">
-        <img id="playerhead" src="" alt="player head">
+        <img id="playerhead" src="" alt="speler hoofd">
         <span id="playername"></span>
-        <img id="logout-btn" src="/assets/logout.png" alt="Logout" title="Logout" onclick="logout()" style="cursor:pointer; width:24px; height:24px; margin-left:10px;">
+        <img id="logout-btn" src="/assets/logout.png" alt="Uitloggen" title="Uitloggen" onclick="logout()">
     </div>
 </header>
 
