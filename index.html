@@ -10,14 +10,16 @@
 <body>
 <header>
     <div class="logo"><img src="/assets/serverlogo.png" alt="Titan Rise"></div>
+
     <div id="user-login">
         <input type="text" id="username" placeholder="Enter Username">
         <button onclick="login()">Login</button>
     </div>
+
     <div id="user-info" style="display:none;">
         <img id="playerhead" src="" alt="player head">
         <span id="playername"></span>
-        <img id="logout-btn" src="/assets/logout.png" alt="Logout" title="Logout" onclick="logout()" style="cursor:pointer; width:24px; height:24px; margin-left:10px;">
+        <img id="logout-btn" src="/assets/logout.png" alt="Logout" title="Logout" onclick="logout()">
     </div>
 </header>
 
@@ -30,6 +32,7 @@
 </nav>
 
 <main class="landing">
+    <div class="overlay"></div>
     <h1>Welcome to <span class="highlight">Titan Rise</span></h1>
     <p>The ultimate Minecraft server experience. Join now and rise to glory!</p>
     <a href="/ranks/" class="cta-btn">View Ranks</a>
@@ -38,3 +41,185 @@
 <script src="/script.js"></script>
 </body>
 </html>
+
+
+/* ======================= STYLE.CSS ======================= */
+
+/* ===== Reset ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #1a0000, #000000);
+    color: #fff;
+}
+
+/* ===== Header ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #220000;
+}
+
+.logo img {
+    width: 160px;
+}
+
+#user-login input {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #111;
+    color: white;
+}
+
+#user-login button {
+    padding: 8px 14px;
+    background: linear-gradient(45deg, #ff0000, #990000);
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#user-login button:hover {
+    transform: scale(1.05);
+}
+
+#user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#playerhead {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid red;
+}
+
+#logout-btn {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#logout-btn:hover {
+    transform: scale(1.2);
+}
+
+/* ===== Navigation ===== */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0;
+    background: rgba(10,10,10,0.8);
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: red;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ===== Landing ===== */
+.landing {
+    position: relative;
+    text-align: center;
+    padding: 140px 20px;
+    background: url('/assets/background.jpg') center/cover no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+
+.landing h1 {
+    position: relative;
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: red;
+    text-shadow: 0 0 15px red;
+}
+
+.landing p {
+    position: relative;
+    color: #ccc;
+    font-size: 18px;
+}
+
+.cta-btn {
+    position: relative;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, red, darkred);
+    border-radius: 12px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 25px;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(255,0,0,0.4);
+}
+
+.cta-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255,0,0,0.8);
+}
+
+/* ===== Cards ===== */
+.card {
+    background: rgba(20,20,20,0.8);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid #220000;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px red;
+}
+
+/* ===== Responsive ===== */
+@media(max-width:600px) {
+    .landing h1 { font-size: 2.2em; }
+}
