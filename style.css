@@ -1,4 +1,4 @@
-/* ===== Reset & Base ===== */
+/* ===== RESET & BASE ===== */
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'Arial', sans-serif; background:#0a0a0a; color:#fff; }
 
@@ -15,17 +15,13 @@ header {
     z-index:1000;
     box-shadow:0 4px 15px rgba(0,0,0,0.5);
 }
-
 header:hover { background:linear-gradient(180deg,#111,#1a0a0a); }
 
 /* Logo */
-.logo img {
-    width:170px;
-    transition:0.3s;
-}
+.logo img { width:170px; transition:0.3s; }
 .logo img:hover { transform:scale(1.05); }
 
-/* ===== Navigation Centered ===== */
+/* ===== NAVIGATION CENTERED ===== */
 nav.nav-center {
     display:flex;
     justify-content:center;
@@ -42,14 +38,12 @@ nav.nav-center {
     background:#1a1a1a;
     box-shadow:0 0 5px rgba(255,0,0,0.4);
 }
-.nav-link:hover {
-    color:#fff;
-    text-shadow:0 0 10px #ff1a1a;
-    box-shadow:0 0 20px #ff1a1a;
-    transform:scale(1.05);
+.nav-link:hover { 
+    color:#fff; 
+    text-shadow:0 0 10px #ff1a1a; 
+    box-shadow:0 0 20px #ff1a1a; 
+    transform:scale(1.05); 
 }
-
-/* Active page */
 .nav-link.active {
     color:#ff1a1a;
     text-shadow:0 0 15px #ff1a1a;
@@ -68,7 +62,6 @@ nav.nav-center {
     transition:0.3s;
 }
 #user-login input:focus { box-shadow:0 0 10px #ff1a1a; }
-
 .login-btn {
     padding:7px 16px;
     margin-left:8px;
@@ -172,19 +165,8 @@ nav.nav-center {
 .community-card img { width:100px; height:100px; margin-bottom:15px; }
 .community-card h3 { color:#ff1a1a; }
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:1024px) { nav.nav-center { gap:15px; } }
-@media(max-width:768px) {
-    header { flex-direction:column; gap:10px; padding:15px 20px; }
-    nav.nav-center { order:2; }
-    #user-login, #user-info { order:3; }
-}
-@media(max-width:480px) {
-    .hero-content h1 { font-size:2.2em; }
-    .features, .community { padding:50px 20px; }
-}
-
-/* ===== HERO SMALL ===== */
+/* ===== RANKS PAGE ===== */
+/* Hero small for ranks */
 .hero-small {
     height:40vh;
     display:flex;
@@ -200,11 +182,8 @@ nav.nav-center {
 .hero-small .hero-content h1 { font-size:3em; color:#ff1a1a; text-shadow:0 0 15px #ff1a1a; }
 .hero-small .hero-content p { color:#ccc; font-size:16px; }
 
-/* ===== RANK MENU BUTTONS ===== */
-.rank-menu {
-    text-align:center;
-    margin-bottom:30px;
-}
+/* Rank menu buttons */
+.rank-menu { text-align:center; margin-bottom:30px; }
 .rank-btn {
     padding:10px 25px;
     margin:0 10px;
@@ -228,15 +207,15 @@ nav.nav-center {
     box-shadow:0 0 20px #ff1a1a;
 }
 
-/* ===== RANK SECTION GRID ===== */
+/* Rank sections grid (3 per row) */
 .rank-section.grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-    padding:0 50px 50px 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 0 50px 50px 50px;
 }
 
-/* ===== RANK CARDS LANDSCAPE ===== */
+/* Rank cards landscape */
 .card.landscape {
     display:flex;
     flex-direction:column;
@@ -261,7 +240,7 @@ nav.nav-center {
 .card.landscape h3 { color:#ff1a1a; margin-bottom:8px; }
 .card.landscape p { color:#ccc; margin-bottom:12px; }
 
-/* ===== BUY / UPGRADE BUTTONS ===== */
+/* Buy/Upgrade buttons */
 .buy-btn {
     display:inline-block;
     padding:10px 20px;
@@ -276,12 +255,22 @@ nav.nav-center {
 .buy-btn:hover { transform:scale(1.05); box-shadow:0 0 25px rgba(255,0,0,0.9); }
 
 /* ===== RESPONSIVE ===== */
-@media(max-width:1024px) { 
-    .rank-section.grid { gap:20px; padding:0 30px 40px 30px; }
+@media(max-width:1024px) {
+    nav.nav-center { gap:15px; }
+    .rank-section.grid { grid-template-columns:repeat(2,1fr); gap:20px; padding:0 30px 40px 30px; }
     .rank-btn { margin:0 5px; padding:8px 18px; }
+    .features { gap:20px; padding:60px 30px; }
 }
-@media(max-width:768px) { 
-    .rank-section.grid { grid-template-columns:1fr; padding:0 20px 30px 20px; }
+@media(max-width:768px) {
+    header { flex-direction:column; gap:10px; padding:15px 20px; }
+    nav.nav-center { order:2; }
+    #user-login, #user-info { order:3; }
+    .rank-section.grid { grid-template-columns:1fr; gap:20px; padding:0 20px 30px 20px; }
     .rank-btn { display:block; margin:10px auto; }
     .hero-small .hero-content h1 { font-size:2.2em; }
+    .features, .community { padding:50px 20px; }
+}
+@media(max-width:480px) {
+    .hero-content h1 { font-size:2.2em; }
+    .features, .community { padding:50px 15px; }
 }
